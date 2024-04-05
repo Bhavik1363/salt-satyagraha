@@ -1,0 +1,144 @@
+
+.mainlogo {
+    width: 120px;
+    height: 120px;
+    /* float: right; */
+    display: block;
+    margin: 10px 10px 0 auto;
+  }
+
+.circle-menu li {
+    list-style: none;
+    display: inline;
+}
+
+.circle-menu {
+    position: relative;
+    width: 26em;
+    height: 26em;
+    border: 3px solid #922731;
+    border-radius: 50%;
+    margin: 0 auto;
+    /* animation: rotate 2.2s ease-in-out 1; */
+    /* animation: 40s linear infinite spin_1; */
+    /* animation: circle 25s linear infinite; */
+}
+
+.circle-menu a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 7em;
+    height: 7em;
+    margin: -3.5em;
+    -moz-border-radius: 4em;
+    -webkit-border-radius: 4em;
+    border-radius: 4em;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    background: #fff;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+
+    /* animation: 40s linear infinite reverse spin_1; */
+
+    /* animation: inner-circle 25s linear infinite; */
+    transition: all ease-in-out 5s;
+}
+
+.circle-menu a img {
+    width: 30px;
+    /* animation: 40s linear infinite reverse spin_1; */
+}
+
+.circle-menu a span {
+    margin-top: 7px;
+    /* animation: 40s linear infinite reverse spin_1; */
+}
+
+/* 360/6= 60  so for 6 elements rotate the element every 60deg. 13em translate is half the circle-menu width */
+
+.circle-menu .spiritual {
+    
+    transform: rotate(60deg) translate(13em) rotate(-60deg);
+    -webkit-transform: rotate(60deg) translate(13em) rotate(-60deg);
+    -ms-transform: rotate(60deg) translate(13em) rotate(-60deg);
+}
+
+.circle-menu .occupational {
+    transform: rotate(120deg) translate(13em) rotate(-120deg);
+    -webkit-transform: rotate(120deg) translate(13em) rotate(-120deg);
+    -ms-transform: rotate(120deg) translate(13em) rotate(-120deg);
+}
+
+.circle-menu .emotional {
+    transform: rotate(180deg) translate(13em) rotate(-180deg);
+    -webkit-transform: rotate(180deg) translate(13em) rotate(-180deg);
+    -ms-transform: rotate(180deg) translate(13em) rotate(-180deg);
+
+   
+}
+
+.circle-menu .environmental {
+    transform: rotate(240deg) translate(13em) rotate(-240deg);
+    -webkit-transform: rotate(240deg) translate(13em) rotate(-240deg);
+    -ms-transform: rotate(240deg) translate(13em) rotate(-240deg);
+
+   
+}
+
+.circle-menu .intellectual {
+    transform: rotate(300deg) translate(13em) rotate(-300deg);
+    -webkit-transform: rotate(300deg) translate(13em) rotate(-300deg);
+    -ms-transform: rotate(300deg) translate(13em) rotate(-300deg);
+
+}
+
+.circle-menu .social {
+    transform: rotate(360deg) translate(13em) rotate(-360deg);
+    -webkit-transform: rotate(360deg) translate(13em) rotate(-360deg);
+    -ms-transform: rotate(360deg) translate(13em) rotate(-360deg);
+
+}
+
+.wholebg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@-ms-keyframes spin_1 {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+  }
+
+  @-moz-keyframes spin_1 {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+  }
+
+  @-webkit-keyframes spin_1 {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+  }
+
+  @keyframes spin_1 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes circle {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+
+@keyframes inner-circle {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(-360deg); }
+}

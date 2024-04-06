@@ -19,9 +19,6 @@
     border: 3px solid #922731;
     border-radius: 50%;
     margin: 0 auto;
-    /* animation: rotate 2.2s ease-in-out 1; */
-    /* animation: 40s linear infinite spin_1; */
-    /* animation: circle 25s linear infinite; */
 }
 
 .circle-menu a {
@@ -32,9 +29,9 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 7em;
-    height: 7em;
-    margin: -3.5em;
+    width: 4em;
+    height: 4em;
+    margin: -2em;
     -moz-border-radius: 4em;
     -webkit-border-radius: 4em;
     border-radius: 4em;
@@ -44,66 +41,96 @@
     background: #fff;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
-
-    /* animation: 40s linear infinite reverse spin_1; */
-
-    /* animation: inner-circle 25s linear infinite; */
     transition: all ease-in-out 5s;
 }
 
 .circle-menu a img {
-    width: 30px;
-    /* animation: 40s linear infinite reverse spin_1; */
+    width: 20px;
 }
 
 .circle-menu a span {
-    margin-top: 7px;
-    /* animation: 40s linear infinite reverse spin_1; */
+    margin-top: 5px;
 }
 
-/* 360/6= 60  so for 6 elements rotate the element every 60deg. 13em translate is half the circle-menu width */
+/* 360/6= 60  so for 6 elements rotate the element every 60deg. 10em translate is half the circle-menu width */
 
 .circle-menu .spiritual {
     
-    transform: rotate(60deg) translate(13em) rotate(-60deg);
-    -webkit-transform: rotate(60deg) translate(13em) rotate(-60deg);
-    -ms-transform: rotate(60deg) translate(13em) rotate(-60deg);
+    transform: rotate(60deg) translate(10em) rotate(-60deg);
+    -webkit-transform: rotate(60deg) translate(10em) rotate(-60deg);
+    -ms-transform: rotate(60deg) translate(10em) rotate(-60deg);
 }
 
 .circle-menu .occupational {
-    transform: rotate(120deg) translate(13em) rotate(-120deg);
-    -webkit-transform: rotate(120deg) translate(13em) rotate(-120deg);
-    -ms-transform: rotate(120deg) translate(13em) rotate(-120deg);
+    transform: rotate(120deg) translate(10em) rotate(-120deg);
+    -webkit-transform: rotate(120deg) translate(10em) rotate(-120deg);
+    -ms-transform: rotate(120deg) translate(10em) rotate(-120deg);
 }
 
 .circle-menu .emotional {
-    transform: rotate(180deg) translate(13em) rotate(-180deg);
-    -webkit-transform: rotate(180deg) translate(13em) rotate(-180deg);
-    -ms-transform: rotate(180deg) translate(13em) rotate(-180deg);
+    transform: rotate(180deg) translate(10em) rotate(-180deg);
+    -webkit-transform: rotate(180deg) translate(10em) rotate(-180deg);
+    -ms-transform: rotate(180deg) translate(10em) rotate(-180deg);
 
    
 }
 
 .circle-menu .environmental {
-    transform: rotate(240deg) translate(13em) rotate(-240deg);
-    -webkit-transform: rotate(240deg) translate(13em) rotate(-240deg);
-    -ms-transform: rotate(240deg) translate(13em) rotate(-240deg);
+    transform: rotate(240deg) translate(10em) rotate(-240deg);
+    -webkit-transform: rotate(240deg) translate(10em) rotate(-240deg);
+    -ms-transform: rotate(240deg) translate(10em) rotate(-240deg);
 
    
 }
 
 .circle-menu .intellectual {
-    transform: rotate(300deg) translate(13em) rotate(-300deg);
-    -webkit-transform: rotate(300deg) translate(13em) rotate(-300deg);
-    -ms-transform: rotate(300deg) translate(13em) rotate(-300deg);
+    transform: rotate(300deg) translate(10em) rotate(-300deg);
+    -webkit-transform: rotate(300deg) translate(10em) rotate(-300deg);
+    -ms-transform: rotate(300deg) translate(10em) rotate(-300deg);
 
 }
 
 .circle-menu .social {
-    transform: rotate(360deg) translate(13em) rotate(-360deg);
-    -webkit-transform: rotate(360deg) translate(13em) rotate(-360deg);
-    -ms-transform: rotate(360deg) translate(13em) rotate(-360deg);
+    transform: rotate(360deg) translate(10em) rotate(-360deg);
+    -webkit-transform: rotate(360deg) translate(10em) rotate(-360deg);
+    -ms-transform: rotate(360deg) translate(10em) rotate(-360deg);
 
+}
+
+
+
+@keyframes circle {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+
+@keyframes inner-circle {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(-360deg); }
+}
+
+#rotator {
+   width:400px;
+    height:400px;
+    margin:20px auto;
+    line-height:1;
+    animation: circle 20s linear infinite;
+    transform-origin: 50% 50%;
+    border: 3px solid #922731;
+    border-radius: 50%;
+}
+
+#rotator > div {
+    animation: inner-circle 20s linear infinite;
+    width:120px;
+    height:120px;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    cursor: pointer;
 }
 
 .wholebg {
@@ -142,3 +169,27 @@
     from { transform:rotate(0deg); }
     to { transform:rotate(-360deg); }
 }
+
+
+@media screen and (max-width: 640px) {
+    .circle-menu {
+        width: 20em;
+        height: 20em;
+    }
+
+    .wholebg {
+        right: 0;
+        width: 100%;
+    }
+
+    .circle-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .circle-menu a span  {
+        font-size: 13px;
+    }
+ }

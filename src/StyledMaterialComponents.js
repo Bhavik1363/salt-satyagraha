@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { TabList } from '@mui/lab'
-import { Tab } from '@mui/material'
+import { Tab, Button } from '@mui/material'
 
 const StyledTabs = styled(props => (
   <TabList
@@ -37,4 +37,16 @@ const StyledTab = styled(props => <Tab disableRipple {...props} />)(
   })
 )
 
-export { StyledTabs, StyledTab }
+const LinkButton = styled(Button)(({ theme }) => ({
+  textTransform: 'capitalize',
+  color: '#000000',
+  fontFamily: ['Inter', 'sans-serif'].join(','),
+  fontWeight: 500
+  // color: theme.palette.getContrastText(purple[500]),
+  // backgroundColor: purple[500],
+  // '&:hover': {
+  //   backgroundColor: purple[700],
+  // },
+}))
+
+export { StyledTabs, StyledTab, LinkButton }

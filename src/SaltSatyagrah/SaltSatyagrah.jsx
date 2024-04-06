@@ -1,10 +1,11 @@
 /* eslint-disable no-unreachable */
 import { Box, Grid, Typography } from '@mui/material'
 import React, { useState } from 'react'
+import { isMobile } from 'react-device-detect'
 
 import TabContext from '@mui/lab/TabContext'
 import TabPanel from '@mui/lab/TabPanel'
-import { StyledTab, StyledTabs } from '../StyledMaterialComponents'
+import { LinkButton, StyledTab, StyledTabs } from '../StyledMaterialComponents'
 import GandhiBapuImg from '../images/Gandhi Bapu Salt Satyagrah.png'
 import GandhiBapu2Img from '../images/Gandhi2.png'
 import GandhiBapu3Img from '../images/Gandhi3.png'
@@ -23,7 +24,7 @@ export default function SaltSatyagrah () {
         <TabContext value={value} sx={{ minHeight: 35 }}>
           <TabPanel value='1'>
             <Grid container spacing={1}>
-              <Grid item xs={12} md={12} lg={12}>
+              <Grid item xs={6} md={6} lg={6}>
                 <Typography
                   variant='h3'
                   sx={{
@@ -34,6 +35,20 @@ export default function SaltSatyagrah () {
                 >
                   {'Backdrop'}
                 </Typography>
+              </Grid>
+              <Grid
+                item
+                xs={6}
+                md={6}
+                lg={6}
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'flex-end'
+                }}
+              >
+                <LinkButton onClick={() => (window.location.href = '/')}>
+                  Back
+                </LinkButton>
               </Grid>
               <Grid item xs={12} md={6} lg={6} sx={{ height: '75vh' }}>
                 <img src={GandhiBapuImg} alt='' className='sideimg' />
@@ -46,7 +61,10 @@ export default function SaltSatyagrah () {
                 sx={{
                   height: '77vh',
                   overflowY: 'scroll',
-                  scrollSnapType: 'y mandatory'
+                  scrollSnapType: 'y mandatory',
+                  '::-webkit-scrollbar': {
+                    display: 'none'
+                  }
                 }}
               >
                 <Typography
@@ -101,7 +119,7 @@ export default function SaltSatyagrah () {
           </TabPanel>
           <TabPanel value='2'>
             <Grid container spacing={1}>
-              <Grid item xs={12} md={12} lg={12}>
+              <Grid item xs={6} md={6} lg={6}>
                 <Typography
                   variant='h3'
                   sx={{
@@ -111,6 +129,20 @@ export default function SaltSatyagrah () {
                 >
                   Salt Satyagrah
                 </Typography>
+              </Grid>
+              <Grid
+                item
+                xs={6}
+                md={6}
+                lg={6}
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'flex-end'
+                }}
+              >
+                <LinkButton onClick={() => (window.location.href = '/')}>
+                  Back
+                </LinkButton>
               </Grid>
               <Grid item xs={12} md={6} lg={6} sx={{ height: '75vh' }}>
                 <img src={GandhiBapu2Img} alt='' className='sideimg' />
@@ -124,7 +156,10 @@ export default function SaltSatyagrah () {
                 sx={{
                   height: '77vh',
                   overflowY: 'scroll',
-                  scrollSnapType: 'y mandatory'
+                  scrollSnapType: 'y mandatory',
+                  '::-webkit-scrollbar': {
+                    display: 'none'
+                  }
                 }}
               >
                 <Typography
@@ -307,7 +342,7 @@ export default function SaltSatyagrah () {
           <TabPanel value='3'>
             {' '}
             <Grid container spacing={1}>
-              <Grid item xs={12} md={12} lg={12}>
+              <Grid item xs={6} md={6} lg={6}>
                 <Typography
                   variant='h3'
                   sx={{
@@ -317,6 +352,20 @@ export default function SaltSatyagrah () {
                 >
                   Role of Bhimrad
                 </Typography>
+              </Grid>
+              <Grid
+                item
+                xs={6}
+                md={6}
+                lg={6}
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'flex-end'
+                }}
+              >
+                <LinkButton onClick={() => (window.location.href = '/')}>
+                  Back
+                </LinkButton>
               </Grid>
               <Grid item xs={12} md={6} lg={6} sx={{ height: '75vh' }}>
                 <img src={GandhiBapu3Img} alt='' className='sideimg' />
@@ -330,7 +379,10 @@ export default function SaltSatyagrah () {
                 sx={{
                   height: '77vh',
                   overflowY: 'scroll',
-                  scrollSnapType: 'y mandatory'
+                  scrollSnapType: 'y mandatory',
+                  '::-webkit-scrollbar': {
+                    display: 'none'
+                  }
                 }}
               >
                 <Typography
@@ -418,7 +470,14 @@ export default function SaltSatyagrah () {
             </Grid>
           </TabPanel>
 
-          <Box sx={{ position: 'absolute', bottom: 8, width: '100%' }}>
+          <Box
+            sx={{
+              position: isMobile ? 'fixed' : 'absolute',
+              bottom: isMobile ? 0 : 8,
+              width: '100%',
+              background: '#ffffff'
+            }}
+          >
             <StyledTabs
               onChange={handleChange}
               centered

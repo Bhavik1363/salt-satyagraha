@@ -4,6 +4,7 @@ import Homepage from './HomePage/Homepage'
 import SaltSatyagrah from './SaltSatyagrah/SaltSatyagrah'
 import HistoricEvidences from './HistoricEvidences/HistoricEvidences'
 import SatyagrahSamrutiTrust from './SatyagrahSmrutiTrust/SatyagrahSamrutiTrust'
+import SocialMedia from './SocialMedia/SocialMedia'
 
 function App () {
   return (
@@ -17,6 +18,7 @@ function App () {
             element={<SatyagrahSamrutiTrust />}
           />
           <Route path='/historic-evidences' element={<HistoricEvidences />} />
+          <Route path='/social-media' element={<SocialMedia />} />
         </Routes>
       </BrowserRouter>
     </div>

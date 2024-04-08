@@ -127,12 +127,12 @@ export default function Homepage () {
             <img src={contactUsImg} alt='' />
             <span>Contact Us</span>
           </div>
-          <div>
+          <div onClick={() => (window.location.href = '/social-media')}>
             {' '}
             <img src={SocialMediaImg} alt='' />
             <span>Social Media</span>
           </div>
-          <div onClick={() => (window.location.href = 'historic-evidences')}>
+          <div onClick={() => (window.location.href = '/historic-evidences')}>
             <img src={HistoricalImg} alt='' />
             <span>Historical Evidences</span>
           </div>

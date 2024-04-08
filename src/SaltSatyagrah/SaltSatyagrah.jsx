@@ -1,6 +1,6 @@
 /* eslint-disable no-unreachable */
 import { Box, Grid, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { isMobile } from 'react-device-detect'
 
 import TabContext from '@mui/lab/TabContext'
@@ -60,8 +60,8 @@ export default function SaltSatyagrah () {
                 lg={6}
                 sx={{
                   height: '77vh',
-                  overflowY: 'scroll',
-                  scrollSnapType: 'y mandatory',
+                  overflowY: 'auto',
+                  // scrollSnapType: 'y mandatory',
                   '::-webkit-scrollbar': {
                     display: 'none'
                   }
@@ -70,7 +70,7 @@ export default function SaltSatyagrah () {
                 <Typography
                   variant='h4'
                   sx={{
-                    scrollSnapAlign: 'start',
+                    // scrollSnapAlign: 'start',
                     fontWeight: 600,
                     fontFamily: ['Inter', 'sans-serif'].join(','),
                     textAlign: 'left'
@@ -155,8 +155,8 @@ export default function SaltSatyagrah () {
                 lg={6}
                 sx={{
                   height: '77vh',
-                  overflowY: 'scroll',
-                  scrollSnapType: 'y mandatory',
+                  overflowY: 'auto',
+                  // scrollSnapType: 'y mandatory',
                   '::-webkit-scrollbar': {
                     display: 'none'
                   }
@@ -165,7 +165,7 @@ export default function SaltSatyagrah () {
                 <Typography
                   variant='h4'
                   sx={{
-                    scrollSnapAlign: 'start',
+                    // scrollSnapAlign: 'start',
                     fontWeight: 600,
                     fontFamily: ['Inter', 'sans-serif'].join(','),
                     textAlign: 'left'
@@ -214,7 +214,7 @@ export default function SaltSatyagrah () {
                 <Typography
                   variant='h4'
                   sx={{
-                    scrollSnapAlign: 'start',
+                    // scrollSnapAlign: 'start',
                     fontWeight: 600,
                     fontFamily: ['Inter', 'sans-serif'].join(','),
                     textAlign: 'left'
@@ -264,7 +264,7 @@ export default function SaltSatyagrah () {
                 <Typography
                   variant='h4'
                   sx={{
-                    scrollSnapAlign: 'start',
+                    // scrollSnapAlign: 'start',
                     fontWeight: 600,
                     fontFamily: ['Inter', 'sans-serif'].join(','),
                     textAlign: 'left'
@@ -378,8 +378,8 @@ export default function SaltSatyagrah () {
                 lg={6}
                 sx={{
                   height: '77vh',
-                  overflowY: 'scroll',
-                  scrollSnapType: 'y mandatory',
+                  overflowY: 'auto',
+                  // scrollSnapType: 'y mandatory',
                   '::-webkit-scrollbar': {
                     display: 'none'
                   }

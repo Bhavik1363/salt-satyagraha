@@ -114,14 +114,18 @@
     height:400px;
     margin:20px auto;
     line-height:1;
-    animation: circle 20s linear infinite;
-    transform-origin: 50% 50%;
     border: 3px solid #922731;
     border-radius: 50%;
+    position: relative;
+}
+
+.rotatoranimation {
+    animation: circle 20s linear infinite;
+    transform-origin: 50% 50%;
+
 }
 
 #rotator > div {
-    animation: inner-circle 20s linear infinite;
     width:120px;
     height:120px;
     display: flex;
@@ -131,6 +135,16 @@
     flex-direction: column;
     background: #fff;
     cursor: pointer;
+    transition: transform 0.5s linear;
+}
+
+#rotator > div:hover {
+    transform: scale(1.2);
+}
+
+.rotatordivanimation {
+    animation: inner-circle 20s linear infinite;
+
 }
 
 .wholebg {

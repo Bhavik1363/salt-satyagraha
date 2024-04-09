@@ -17,26 +17,33 @@ import $ from 'jquery'
 
 export default function Homepage () {
   useEffect(() => {
+    animationCall()
+  })
+
+  const animationCall = () => {
     $('document').ready(function () {
       //arrange blocks in a circle
+
       var block = $('#rotator div').get(),
         increase = (Math.PI * 2) / block.length,
         x = 0,
         y = 0,
         angle = 0
 
+      $('#rotator').addClass('rotatoranimation') // rotatoranimation
       for (var i = 0; i < block.length; i++) {
         var elem = block[i]
-        x = 180 * Math.cos(angle) + 150
-        y = 180 * Math.sin(angle) + 150
+        x = 195 * Math.cos(angle) + 150
+        y = 195 * Math.sin(angle) + 150
+        elem.className = 'rotatordivanimation'
         elem.style.position = 'absolute'
         elem.style.left = x + 'px'
         elem.style.top = y + 'px'
-        // var rot = 90 + i * (360 / block.length)
+
         angle += increase
       }
     })
-  })
+  }
 
   return (
     <React.Fragment>
@@ -47,42 +54,42 @@ export default function Homepage () {
           <div className='circle-menu'>
             <ul>
               <li onClick={() => (window.location.href = '/salt-satyagrah')}>
-                <a id={`circle1`} className='spiritual' href='/salt-satyagrah'>
+                <a className='spiritual' href='/salt-satyagrah'>
                   <img src={saltSatyagrahImg} alt='' />
                   <span>Salt Satyagrah</span>
                 </a>
               </li>
 
               <li>
-                <a id={`circle1`} className='occupational' href='#'>
+                <a className='occupational' href='#'>
                   <img src={satyagrahTrustImg} alt='' />
                   <span>Satyagrah Smruti Trust</span>
                 </a>
               </li>
 
               <li>
-                <a id={`circle1`} className='emotional' href='#'>
+                <a className='emotional' href='#'>
                   <img src={contactUsImg} alt='' />
                   <span>Contact Us</span>
                 </a>
               </li>
 
               <li>
-                <a id={`circle1`} className='environmental' href='#'>
+                <a className='environmental' href='#'>
                   <img src={SocialMediaImg} alt='' />
                   <span>Social Media</span>
                 </a>
               </li>
 
               <li onClick={() => (window.location.href = 'historic-evidences')}>
-                <a id={`circle1`} className='intellectual' href='#'>
+                <a className='intellectual' href='#'>
                   <img src={HistoricalImg} alt='' />
                   <span>Historical Evidences</span>
                 </a>
               </li>
 
               <li>
-                <a id={`circle1`} className='social' href='#'>
+                <a className='social' href='#'>
                   <img src={FacilitiesImg} alt='' />
                   <span>Facilities & Attractions</span>
                 </a>
@@ -91,12 +98,27 @@ export default function Homepage () {
           </div>
         </div>
       ) : (
-        <div id='rotator'>
+        <div
+          id='rotator'
+          onMouseEnter={() => {
+            $('#rotator').removeClass('rotatoranimation')
+            var block = $('#rotator div').get()
+
+            for (var i = 0; i < block.length; i++) {
+              var elem = block[i]
+
+              elem.className = ''
+            }
+          }}
+          onMouseLeave={animationCall}
+        >
           <div onClick={() => (window.location.href = '/salt-satyagrah')}>
             <img src={saltSatyagrahImg} alt='' />
             <span>Salt Satyagrah</span>
           </div>
-          <div>
+          <div
+            onClick={() => (window.location.href = '/satyagrah-smruti-trust')}
+          >
             <img src={satyagrahTrustImg} alt='' />
             <span>Satyagrah Smruti Trust</span>
           </div>
@@ -105,12 +127,12 @@ export default function Homepage () {
             <img src={contactUsImg} alt='' />
             <span>Contact Us</span>
           </div>
-          <div>
+          <div onClick={() => (window.location.href = '/social-media')}>
             {' '}
             <img src={SocialMediaImg} alt='' />
             <span>Social Media</span>
           </div>
-          <div onClick={() => (window.location.href = 'historic-evidences')}>
+          <div onClick={() => (window.location.href = '/historic-evidences')}>
             <img src={HistoricalImg} alt='' />
             <span>Historical Evidences</span>
           </div>

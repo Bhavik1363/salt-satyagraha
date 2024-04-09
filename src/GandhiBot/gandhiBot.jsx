@@ -1,64 +1,69 @@
-/* eslint-disable no-unreachable */
-import { Box, Grid, List, ListItem, ListItemText } from '@mui/material'
+/* eslint-disable */
+import {
+  Box,
+  Grid,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+  CircularProgress,
+  FormControl,
+  InputLabel,
+  InputAdornment,
+  Input,
+  IconButton
+} from '@mui/material'
 import React, { useEffect, useRef, useState } from 'react'
-import { isMobile } from 'react-device-detect'
-
-import TabContext from '@mui/lab/TabContext'
-import TabPanel from '@mui/lab/TabPanel'
 import { LinkButton } from '../StyledMaterialComponents'
-import GandhiBapuImg from '../images/Gandhi_Bapu_Salt_Satyagrah.png'
-import Azad_Hindustan from './audio/Azad_Hindustan.mp3';
-import audio1 from './audio/audio1.mp3';
-import audio2 from './audio/audio2.mp3';
-import bgImage from './images/flag_bg.webp';
-import './gandhiBot.css';
-import axios from 'axios';
-import baseUrls from '../base-urls';
+import GandhiBapuImg from '../images/BotBG.png'
+import Azad_Hindustan from './audio/Azad_Hindustan.mp3'
+import audio1 from './audio/audio1.mp3'
+import audio2 from './audio/audio2.mp3'
 
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+import './gandhiBot.css'
+import axios from 'axios'
+import baseUrls from '../base-urls'
+import { MicNoneOutlined, Send } from '@mui/icons-material'
+
+const SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition
 const recognition = new SpeechRecognition()
 
 recognition.continous = true
 recognition.lang = 'en-IN'
 
 export default function GandhiBot() {
-  const [value, setValue] = useState('1');
-  const [listening, setListening] = useState(false);
+  const [listening, setListening] = useState(false)
 
-  const bgsound = useRef();
+  const bgsound = useRef()
 
   useEffect(() => {
-    handleListen();
+    handleListen()
   }, [listening])
 
-  // const handleChange = (event, newValue) => {
-  //   setValue(newValue)
-  // }
-
   const toggleListen = () => {
-    setListening(!listening);
+    setListening(!listening)
   }
 
   const handleListen = () => {
-    console.log('listening?', listening);
+    console.log('listening?', listening)
 
     if (listening) {
       recognition.start()
       recognition.onend = () => {
-        console.log("...continue listening...")
+        console.log('...continue listening...')
         recognition.start()
       }
-
     } else {
       recognition.stop()
       recognition.onend = () => {
-        console.log("Stopped listening per click");
-        document.getElementById("micButton").checked = false;
+        console.log('Stopped listening per click')
+        document.getElementById('micButton').checked = false
       }
     }
 
     recognition.onstart = () => {
-      console.log("Listening!")
+      console.log('Listening!')
     }
 
     let finalTranscript = ''
@@ -66,15 +71,15 @@ export default function GandhiBot() {
       let interimTranscript = ''
 
       for (let i = event.resultIndex; i < event.results.length; i++) {
-        const transcript = event.results[i][0].transcript;
-        if (event.results[i].isFinal) finalTranscript += transcript + ' ';
-        else interimTranscript += transcript;
+        const transcript = event.results[i][0].transcript
+        if (event.results[i].isFinal) finalTranscript += transcript + ' '
+        else interimTranscript += transcript
       }
       // document.getElementById('interim').innerHTML = interimTranscript
-      document.getElementById('final').value = finalTranscript;
+      document.getElementById('final').value = finalTranscript
 
       if (finalTranscript) {
-        fetchResponse();
+        fetchResponse()
       }
 
       //-------------------------COMMANDS------------------------------------
@@ -89,7 +94,7 @@ export default function GandhiBot() {
           console.log('Stopped listening per command')
           const finalText = transcriptArr.slice(0, -3).join(' ')
           document.getElementById('final').value = finalText
-          document.getElementById("micButton").checked = false;
+          document.getElementById('micButton').checked = false
         }
       }
     }
@@ -97,143 +102,200 @@ export default function GandhiBot() {
     //-----------------------------------------------------------------------
 
     recognition.onerror = event => {
-      console.log("Error occurred in recognition: " + event.error)
+      console.log('Error occurred in recognition: ' + event.error)
     }
   }
 
   const fetchResponse = () => {
-    let queryText = document.getElementById('final').value;
-    console.log("Fetching response", queryText);
+    let queryText = document.getElementById('final').value
+    console.log('Fetching response', queryText)
     if (queryText) {
-      axios.post(`${baseUrls.serverUrl}activities/dialogflow`, {
-        languageCode: "en",
-        queryText: queryText,
-        sessionId: "abdc1234"
-      }).then(res => {
-        switch (res.data.response) {
-          case 'Azad_Hindustan':
-            bgsound.current = new Audio(Azad_Hindustan);
-            bgsound.current.play();
-            bgsound.current.loop = false;
-            bgsound.current.volume = 1;
-            break;
-          case 'audio1':
-            bgsound.current = new Audio(audio1);
-            bgsound.current.play();
-            bgsound.current.loop = false;
-            bgsound.current.volume = 1;
-            break;
-          case 'audio2':
-            bgsound.current = new Audio(audio2);
-            bgsound.current.play();
-            bgsound.current.loop = false;
-            bgsound.current.volume = 1;
-            break;
+      axios
+        .post(`${baseUrls.serverUrl}activities/dialogflow`, {
+          languageCode: 'en',
+          queryText: queryText,
+          sessionId: 'abdc1234'
+        })
+        .then(res => {
+          switch (res.data.response) {
+            case 'Azad_Hindustan':
+              bgsound.current = new Audio(Azad_Hindustan)
+              bgsound.current.play()
+              bgsound.current.loop = false
+              bgsound.current.volume = 1
+              toggleListen()
+              break
+            case 'audio1':
+              bgsound.current = new Audio(audio1)
+              bgsound.current.play()
+              bgsound.current.loop = false
+              bgsound.current.volume = 1
+              toggleListen()
+              break
+            case 'audio2':
+              bgsound.current = new Audio(audio2)
+              bgsound.current.play()
+              bgsound.current.loop = false
+              bgsound.current.volume = 1
+              toggleListen()
+              break
 
-          default:
-            break;
-        }
-      }).catch(err => {
-        console.log("getting error while fetching response", err);
-      });
+            default:
+              break
+          }
+        })
+        .catch(err => {
+          console.log('getting error while fetching response', err)
+        })
     }
   }
 
   return (
     <React.Fragment>
-      <Box sx={{ width: '100%', typography: 'body1', backgroundImage: `url(${bgImage})`, height: "100vh" }}>
-        <TabContext value={value} sx={{ minHeight: 35 }}>
-          <TabPanel value='1'>
-            <Grid container spacing={1}>
-              <Grid item xs={6} md={6} lg={6}>
+      <Grid
+        container
+        spacing={2}
+        sx={{ width: '100%', margin: 0, paddingRight: 2 }}
+      >
+        <Grid
+          item
+          xs={12}
+          md={12}
+          lg={12}
+          display={'flex'}
+          justifyContent={'space-between'}
+          alignItems={'center'}
+        >
+          <Typography
+            variant='h3'
+            sx={{
+              fontFamily: ['Inter', 'sans-serif'].join(','),
+              textAlign: 'left'
+            }}
+          >
+            {'Talk with Bapu'}
+          </Typography>
 
-              </Grid>
-              <Grid
-                item
-                xs={6}
-                md={6}
-                lg={6}
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'flex-end'
-                }}
-              >
-                <LinkButton onClick={() => (window.location.href = '/')}>
-                  Back
-                </LinkButton>
-              </Grid>
-              <Grid item xs={12} md={6} lg={6} sx={{ height: '75vh' }}>
-                <img src={GandhiBapuImg} alt='' className='sideimg' />
-              </Grid>
-              <Grid item xs={12} md={2} lg={2} sx={{ height: '75vh' }}></Grid>
-              <Grid item xs={12} md={4} lg={4} sx={{ height: '75vh', display: "flex", flexDirection: "column", justifyContent: 'center' }}>
-                <List sx={{ border: "2px solid #ed9254", borderRadius: "16px" }}>
-                  <ListItem>
-                    <ListItemText primary="Apke sapno ka bharat kaisa hona chahiye?" sx={{ color: "#ed9254", cursor: "pointer" }} onClick={() => {
-                      document.getElementById('final').value = "Apke sapno ka bharat kaisa hona chahiye?"
-                      fetchResponse();
-                    }} />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="Gandhi's philosophy for independent India" sx={{ color: "#ed9254", cursor: "pointer" }} onClick={() => {
-                      document.getElementById('final').value = "Gandhi's philosophy for independent India"
-                      fetchResponse();
-                    }} />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="What are your thought on Sarvdharma Samabhav?" sx={{ color: "#ed9254", cursor: "pointer" }} onClick={() => {
-                      document.getElementById('final').value = "What are your thought on Sarvdharma Samabhav?"
-                      fetchResponse();
-                    }} />
-                  </ListItem>
-                </List>
-              </Grid>
-              {/* <button id='microphone-btn' className='button' onClick={toggleListen} /> */}
-              <div className="button-container" onClick={() => toggleListen()}>
-                <input type="checkbox" id="micButton" className="mic-checkbox" />
-                <label htmlFor="micButton" className="mic-button">
-                  <div className='mic'>
-                    <div className='mic-button-loader'>
-                    </div>
-                    <div className="mic-base">
-                    </div>
-                  </div>
-                  <div className="button-message">
-                    <span>
-                      PRESS TO TALK
-                    </span>
-                  </div>
-                </label>
+          <LinkButton onClick={() => (window.location.href = '/')}>
+            Back
+          </LinkButton>
+        </Grid>
+
+        <Grid item xs={12} md={6} lg={6} sx={{ height: '75vh' }}>
+          <img src={GandhiBapuImg} alt='' className='sideimg' />
+        </Grid>
+
+        <Grid
+          item
+          xs={6}
+          md={6}
+          lg={6}
+          sx={{
+            height: '75vh',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-evenly',
+            alignItems: 'center'
+          }}
+        >
+          <div onClick={() => toggleListen()}>
+            <input type='checkbox' id='micButton' className='mic-checkbox' />
+            {!listening ? (
+              <label htmlFor='micButton' className='mic-button'>
+                <MicNoneOutlined sx={{ fontSize: 40, color: '#922731' }} />
+                <span>Tap to Speak</span>
+              </label>
+            ) : (
+              // <CircularProgress />
+
+              <div className='anim-container'>
+                <span className='circles lis1'></span>
+                <span className='circles lis2'></span>
+                <span className='circles lis3'></span>
+                <span className='circles lis4'></span>
               </div>
-              {/* <div id='interim' className='interim'></div> */}
-
-            </Grid>
-          </TabPanel>
+            )}
+          </div>
 
           <Box
             sx={{
-              position: isMobile ? 'fixed' : 'absolute',
-              bottom: isMobile ? 0 : 8,
               width: '100%',
-              // background: '#ffffff'
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'column'
             }}
           >
-            <input type="text" id='final' className='final' />
-            <LinkButton onClick={fetchResponse}>
-              Enter
-            </LinkButton>
-            {/* <StyledTabs
-              onChange={handleChange}
-              centered
-              sx={{ justifyContent: 'space-evenly' }}
-            >
-              <StyledTab label='English' value='1' />
-              <StyledTab label='Hindi' value='2' />
-              <StyledTab label='Gujarati' value='3' />
-            </StyledTabs> */}
+            <FormControl sx={{ m: 1, width: '60%' }} variant='standard'>
+              <InputLabel shrink htmlFor='final'>
+                Enter here
+              </InputLabel>
+              <Input
+                id='final'
+                type={'text'}
+                endAdornment={
+                  <InputAdornment position='end'>
+                    <IconButton sx={{ padding: 0 }} onClick={fetchResponse}>
+                      <Send />
+                    </IconButton>
+                  </InputAdornment>
+                }
+              />
+            </FormControl>
+
+            <List sx={{ width: '60%' }}>
+              <ListItem>
+                <ListItemText
+                  primary='Apke sapno ka bharat kaisa hona chahiye?'
+                  disableTypography
+                  sx={{
+                    cursor: 'pointer',
+                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontWeight: 600
+                  }}
+                  onClick={() => {
+                    document.getElementById('final').value =
+                      'Apke sapno ka bharat kaisa hona chahiye?'
+                    fetchResponse()
+                  }}
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  primary="Gandhi's philosophy for independent India"
+                  disableTypography
+                  sx={{
+                    cursor: 'pointer',
+                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontWeight: 600
+                  }}
+                  onClick={() => {
+                    document.getElementById('final').value =
+                      "Gandhi's philosophy for independent India"
+                    fetchResponse()
+                  }}
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  primary='What are your thought on Sarvdharma Samabhav?'
+                  disableTypography
+                  sx={{
+                    cursor: 'pointer',
+                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontWeight: 600
+                  }}
+                  onClick={() => {
+                    document.getElementById('final').value =
+                      'What are your thought on Sarvdharma Samabhav?'
+                    fetchResponse()
+                  }}
+                />
+              </ListItem>
+            </List>
           </Box>
-        </TabContext>
-      </Box>
+        </Grid>
+      </Grid>
     </React.Fragment>
   )
 }

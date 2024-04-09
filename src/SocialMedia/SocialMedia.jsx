@@ -63,7 +63,7 @@ export default function SocialMedia () {
             </li>
             <li>
               <img src={xQRImg} alt='' />
-              <span>X</span>
+              <span>X (Twitter)</span>
             </li>
           </ul>
         </Grid>

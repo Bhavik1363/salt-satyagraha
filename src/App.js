@@ -3,12 +3,9 @@ import './App.css'
 import Homepage from './HomePage/Homepage'
 import SaltSatyagrah from './SaltSatyagrah/SaltSatyagrah'
 import HistoricEvidences from './HistoricEvidences/HistoricEvidences'
-<<<<<<< HEAD
 import GandhiBot from './GandhiBot/gandhiBot'
-=======
 import SatyagrahSamrutiTrust from './SatyagrahSmrutiTrust/SatyagrahSamrutiTrust'
 import SocialMedia from './SocialMedia/SocialMedia'
->>>>>>> f32286fdf223c98aa70b56de2c7287af1f3b6a3e
 
 function App () {
   return (

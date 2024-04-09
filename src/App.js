@@ -14,7 +14,10 @@ function App () {
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='/salt-satyagrah' element={<SaltSatyagrah />} />
-          <Route path='/satyagrah-smruti-trust' element={<SatyagrahSamrutiTrust />} />
+          <Route
+            path='/satyagrah-smruti-trust'
+            element={<SatyagrahSamrutiTrust />}
+          />
           <Route path='/historic-evidences' element={<HistoricEvidences />} />
           <Route path='/bot' element={<GandhiBot />} />
           <Route path='/social-media' element={<SocialMedia />} />

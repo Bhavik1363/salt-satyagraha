@@ -10,6 +10,7 @@ import FacilitiesImg from '../images/Facilities.svg'
 
 import wholeBGImg from '../images/Whole BG.png'
 import logoImg from '../images/Logo (English).png'
+import talkbotImg from '../images/Talkbot.svg'
 
 import { isMobile } from 'react-device-detect'
 
@@ -145,6 +146,14 @@ export default function Homepage () {
       )}
 
       <img src={wholeBGImg} alt='' className='wholebg' />
+
+      <div
+        className='talkbot-container'
+        onClick={() => (window.location.href = '/bot')}
+      >
+        <img src={talkbotImg} alt='' />
+        <span>Talk with Bapu</span>
+      </div>
     </React.Fragment>
   )
 }

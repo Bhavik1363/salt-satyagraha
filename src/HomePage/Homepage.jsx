@@ -123,12 +123,14 @@ export default function Homepage () {
             <img src={satyagrahTrustImg} alt='' />
             <span>Satyagrah Smruti Trust</span>
           </div>
-          <div>
+          <div onClick={() => (window.location.href = '/contact-us')}>
             {' '}
             <img src={contactUsImg} alt='' />
             <span>Contact Us</span>
           </div>
-          <div onClick={() => (window.location.href = '/social-media')}>
+          <div
+          // onClick={() => (window.location.href = '/social-media')}
+          >
             {' '}
             <img src={SocialMediaImg} alt='' />
             <span>Social Media</span>

@@ -6,6 +6,7 @@ import HistoricEvidences from './HistoricEvidences/HistoricEvidences'
 import GandhiBot from './GandhiBot/gandhiBot'
 import SatyagrahSamrutiTrust from './SatyagrahSmrutiTrust/SatyagrahSamrutiTrust'
 import SocialMedia from './SocialMedia/SocialMedia'
+import Contactus from './ContactUs/Contactus'
 
 function App () {
   return (
@@ -21,6 +22,7 @@ function App () {
           <Route path='/historic-evidences' element={<HistoricEvidences />} />
           <Route path='/bot' element={<GandhiBot />} />
           <Route path='/social-media' element={<SocialMedia />} />
+          <Route path='/contact-us' element={<Contactus />} />
         </Routes>
       </BrowserRouter>
     </div>

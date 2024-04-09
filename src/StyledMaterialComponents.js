@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { TabList } from '@mui/lab'
-import { Tab, Button } from '@mui/material'
+import { Tab, Button, TextField } from '@mui/material'
 
 const StyledTabs = styled(props => (
   <TabList
@@ -48,4 +48,73 @@ const LinkButton = styled(Button)(({ theme }) => ({
   // },
 }))
 
-export { StyledTabs, StyledTab, LinkButton }
+const CssTextField = styled(TextField)({
+  '& label.Mui-focused': {
+    color: '#A0AAB4'
+  },
+  '& .MuiInput-underline:after': {
+    borderBottomColor: '#B2BAC2'
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: '#E0E3E7'
+    },
+    '&:hover fieldset': {
+      borderColor: '#B2BAC2'
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: '#6F7E8C'
+    }
+  }
+})
+
+const RedditTextField = styled(props => (
+  <TextField InputProps={{ disableUnderline: true }} {...props} />
+))(({ theme }) => ({
+  width: '70%',
+  '& .MuiFilledInput-root': {
+    overflow: 'hidden',
+    borderBottom: '1px solid #000',
+    backgroundColor: 'transparent',
+    '&:hover': {
+      backgroundColor: 'transparent'
+    },
+    '&.Mui-focused': {
+      backgroundColor: 'transparent',
+      boxShadow: 'none'
+    }
+  },
+  '& .MuiInputLabel-root': {
+    fontFamily: ['Inter', 'sans-serif'].join(','),
+    fontWeight: 500,
+    color: '#000000',
+    fontSize: '1.1rem',
+    '&.Mui-focused': {
+      backgroundColor: 'transparent',
+      color: '#000000'
+    }
+  }
+}))
+
+const FilledButton = styled(Button)(({ theme }) => ({
+  color: '#111111',
+  backgroundColor: 'transparent',
+  width: '70%',
+  border: '2px solid #111111',
+  borderRadius: 23,
+  textTransform: 'capitalize',
+  marginTop: 30,
+  '&:hover': {
+    backgroundColor: '#231514',
+    color: '#fff'
+  }
+}))
+
+export {
+  StyledTabs,
+  StyledTab,
+  LinkButton,
+  CssTextField,
+  RedditTextField,
+  FilledButton
+}

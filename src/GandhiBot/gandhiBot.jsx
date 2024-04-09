@@ -23,7 +23,7 @@ import audio2 from './audio/audio2.mp3'
 import './gandhiBot.css'
 import axios from 'axios'
 import baseUrls from '../base-urls'
-import { MicNoneOutlined, Send } from '@mui/icons-material'
+import { MicNoneOutlined, Pause, Send, Stop } from '@mui/icons-material'
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition
@@ -34,6 +34,7 @@ recognition.lang = 'en-IN'
 
 export default function GandhiBot() {
   const [listening, setListening] = useState(false)
+  const [speaking, setSpeaking] = useState(false)
 
   const bgsound = useRef()
 
@@ -46,9 +47,7 @@ export default function GandhiBot() {
   }
 
   const handleListen = () => {
-    console.log('listening?', listening)
-
-    if (listening) {
+    if (listening && !speaking) {
       recognition.start()
       recognition.onend = () => {
         console.log('...continue listening...')
@@ -123,20 +122,26 @@ export default function GandhiBot() {
               bgsound.current.play()
               bgsound.current.loop = false
               bgsound.current.volume = 1
+
+              setSpeaking(true)
               toggleListen()
               break
+
             case 'audio1':
               bgsound.current = new Audio(audio1)
               bgsound.current.play()
               bgsound.current.loop = false
               bgsound.current.volume = 1
+              setSpeaking(true)
               toggleListen()
               break
+
             case 'audio2':
               bgsound.current = new Audio(audio2)
               bgsound.current.play()
               bgsound.current.loop = false
               bgsound.current.volume = 1
+              setSpeaking(true)
               toggleListen()
               break
 
@@ -205,15 +210,28 @@ export default function GandhiBot() {
                 <MicNoneOutlined sx={{ fontSize: 40, color: '#922731' }} />
                 <span>Tap to Speak</span>
               </label>
-            ) : (
-              // <CircularProgress />
-
+            ) : !speaking ? (
               <div className='anim-container'>
                 <span className='circles lis1'></span>
                 <span className='circles lis2'></span>
                 <span className='circles lis3'></span>
                 <span className='circles lis4'></span>
               </div>
+            ) : (
+              <React.Fragment>
+                <IconButton
+                  onClick={() => {
+                    recognition.stop()
+                    recognition.onend = () => {
+                      document.getElementById('micButton').checked = false
+                      document.getElementById('final').value = ''
+                    }
+                  }}
+                  sx={{ background: '#922731', color: '#fff' }}
+                >
+                  <Stop />
+                </IconButton>
+              </React.Fragment>
             )}
           </div>
 

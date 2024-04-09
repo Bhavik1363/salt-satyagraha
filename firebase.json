@@ -1,0 +1,11 @@
+{
+    "hosting": {
+        "public": "build",
+        "site": "sst-bhimrad",
+        "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+        "rewrites": [{
+            "source": "**",
+            "destination": "/index.html"
+        }]
+    }
+}

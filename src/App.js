@@ -3,6 +3,7 @@ import './App.css'
 import Homepage from './HomePage/Homepage'
 import SaltSatyagrah from './SaltSatyagrah/SaltSatyagrah'
 import HistoricEvidences from './HistoricEvidences/HistoricEvidences'
+import GandhiBot from './GandhiBot/gandhiBot'
 
 function App () {
   return (
@@ -12,6 +13,7 @@ function App () {
           <Route path='/' element={<Homepage />} />
           <Route path='/salt-satyagrah' element={<SaltSatyagrah />} />
           <Route path='/historic-evidences' element={<HistoricEvidences />} />
+          <Route path='/bot' element={<GandhiBot />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from 'react'
 import { Box, Grid, Typography } from '@mui/material'
 import TabContext from '@mui/lab/TabContext'
@@ -10,7 +11,7 @@ import trusteeImg from '../images/trustee.png'
 import spoonImg from '../images/Spoon.png'
 import './trust.css'
 
-export default function SatyagrahSamrutiTrust () {
+export default function SatyagrahSamrutiTrust() {
   const [value, setValue] = useState('1')
 
   const handleChange = (event, newValue) => {
@@ -333,7 +334,8 @@ export default function SatyagrahSamrutiTrust () {
                         <li>
                           <img src={trusteeImg} alt='' />
                           <span>
-                            Shri Parimalbhai G. Desai - <br /> Vice-President</span>
+                            Shri Parimalbhai G. Desai - <br /> Vice-President
+                          </span>
                         </li>
                         <li>
                           <img src={trusteeImg} alt='' />

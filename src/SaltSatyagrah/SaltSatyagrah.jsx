@@ -1,6 +1,6 @@
-/* eslint-disable no-unreachable */
+/* eslint-disable */
 import { Box, Grid, Typography } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { isMobile } from 'react-device-detect'
 
 import TabContext from '@mui/lab/TabContext'
@@ -11,7 +11,7 @@ import GandhiBapu2Img from '../images/Gandhi2.png'
 import GandhiBapu3Img from '../images/Gandhi3.png'
 import './saltsatyagrah.css'
 
-export default function SaltSatyagrah () {
+export default function SaltSatyagrah() {
   const [value, setValue] = useState('1')
 
   const handleChange = (event, newValue) => {

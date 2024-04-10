@@ -65,3 +65,40 @@
     top: 0;
     transform: rotateZ(180deg);
  }
+
+ .slick-dots li {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #922731;
+    padding: 4px;
+    border-radius: 2px;
+ }
+
+ .customarrow {
+    height: 100%;
+    width: 100%;
+ }
+
+ .customarrow img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+ }
+
+ .slider-secondiv {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s linear;
+}
+
+ .slider-secondiv:hover {
+    transform: scale(1.1);
+}
+
+.slider-secondiv img {
+    height: 500px !important;
+    width: 100% !important;
+    object-fit: contain;
+}

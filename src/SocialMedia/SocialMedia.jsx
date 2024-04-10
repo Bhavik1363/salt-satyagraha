@@ -1,15 +1,16 @@
+/* eslint-disable */
 import React from 'react'
 import './social.css'
 
 import wholeBGImg from '../images/Whole BG.png'
-import { Box, Grid, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 
 import fbQRImg from '../images/social-media/fbi_qr-code.png'
 import instaQRImg from '../images/social-media/insta_qrcode.png'
 import xQRImg from '../images/social-media/x_qr-code.png'
 import { LinkButton } from '../StyledMaterialComponents'
 
-export default function SocialMedia () {
+export default function SocialMedia() {
   return (
     <React.Fragment>
       <img src={wholeBGImg} alt='' className='wholebgsecond' />

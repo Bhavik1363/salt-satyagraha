@@ -71,7 +71,7 @@ const CssTextField = styled(TextField)({
 const RedditTextField = styled(props => (
   <TextField InputProps={{ disableUnderline: true }} {...props} />
 ))(({ theme }) => ({
-  width: '70%',
+  width: '80%',
   '& .MuiFilledInput-root': {
     overflow: 'hidden',
     borderBottom: '1px solid #000',
@@ -99,7 +99,7 @@ const RedditTextField = styled(props => (
 const FilledButton = styled(Button)(({ theme }) => ({
   color: '#111111',
   backgroundColor: 'transparent',
-  width: '70%',
+  width: '80%',
   border: '2px solid #111111',
   borderRadius: 23,
   textTransform: 'capitalize',

@@ -1,0 +1,22 @@
+.slick-slide {
+    padding: 0 10px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.slick-slide img {
+    height: 300px;
+    width: 400px;
+}
+
+.slider-maindiv {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slick-track, .slick-list, .slick-slider, .slider-container {
+    height: 100%;
+}

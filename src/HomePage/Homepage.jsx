@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable */
 import React, { useEffect } from 'react'
 import './homepage.css'
 import saltSatyagrahImg from '../images/saltSatyagrah.svg'
@@ -16,7 +16,7 @@ import { isMobile } from 'react-device-detect'
 
 import $ from 'jquery'
 
-export default function Homepage () {
+export default function Homepage() {
   useEffect(() => {
     animationCall()
   })

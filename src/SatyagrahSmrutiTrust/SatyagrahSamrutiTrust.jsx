@@ -327,46 +327,42 @@ export default function SatyagrahSamrutiTrust () {
                         <li>
                           <img src={trusteeImg} alt='' />
                           <span>
-                            Shri Balwantbhai L. Patel - <br /> President and
-                            Lifelong Trustee
+                            Shri Balwantbhai L. Patel - <br /> President
                           </span>
                         </li>
                         <li>
                           <img src={trusteeImg} alt='' />
                           <span>
-                            Shri Parimalbhai G. Desai - <br /> Vice-President
-                            and Lifelong Trustee
+                            Shri Parimalbhai G. Desai - <br /> Vice-President</span>
+                        </li>
+                        <li>
+                          <img src={trusteeImg} alt='' />
+                          <span>
+                            Shri Yogeshbhai Patel - <br /> Secretary
                           </span>
                         </li>
                         <li>
                           <img src={trusteeImg} alt='' />
                           <span>
-                            Shri Yogeshbhai Patel - <br /> Secretary and
-                            Lifelong Trustee
+                            Shri Karanbhai B. Patel - <br />
                           </span>
                         </li>
                         <li>
                           <img src={trusteeImg} alt='' />
                           <span>
-                            Shri Karanbhai B. Patel - <br /> Lifelong Trustee
+                            Shri Hardikbhai P. Desai <br />
                           </span>
                         </li>
                         <li>
                           <img src={trusteeImg} alt='' />
                           <span>
-                            Shri Hardikbhai P. Desai - <br /> Lifelong Trustee
+                            Shri Prashantbhai B. Patel <br />
                           </span>
                         </li>
                         <li>
                           <img src={trusteeImg} alt='' />
                           <span>
-                            Shri Prashantbhai B. Patel - <br /> Lifelong Trustee
-                          </span>
-                        </li>
-                        <li>
-                          <img src={trusteeImg} alt='' />
-                          <span>
-                            Shri Anilbhai Patel - <br /> Lifelong Trustee
+                            Shri Anilbhai Patel <br />
                           </span>
                         </li>
                       </ul>

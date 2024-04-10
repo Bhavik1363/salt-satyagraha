@@ -139,7 +139,9 @@ export default function Homepage () {
             <img src={HistoricalImg} alt='' />
             <span>Historical Evidences</span>
           </div>
-          <div>
+          <div
+            onClick={() => (window.location.href = '/facility-and-attraction')}
+          >
             {' '}
             <img src={FacilitiesImg} alt='' />
             <span>Facilities & Attractions</span>

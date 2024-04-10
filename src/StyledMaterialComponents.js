@@ -22,7 +22,7 @@ const StyledTabs = styled(props => (
 const StyledTab = styled(props => <Tab disableRipple {...props} />)(
   ({ theme }) => ({
     textTransform: 'none',
-    fontWeight: 600,
+    fontWeight: 500,
     fontFamily: ['Inter', 'sans-serif'].join(','),
     fontSize: 15,
     marginRight: 1,

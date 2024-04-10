@@ -7,6 +7,7 @@ import GandhiBot from './GandhiBot/gandhiBot'
 import SatyagrahSamrutiTrust from './SatyagrahSmrutiTrust/SatyagrahSamrutiTrust'
 import SocialMedia from './SocialMedia/SocialMedia'
 import Contactus from './ContactUs/Contactus'
+import FacilitiesandAttraction from './Facilities/FacilitiesandAttraction'
 
 function App () {
   return (
@@ -23,6 +24,10 @@ function App () {
           <Route path='/bot' element={<GandhiBot />} />
           <Route path='/social-media' element={<SocialMedia />} />
           <Route path='/contact-us' element={<Contactus />} />
+          <Route
+            path='/facility-and-attraction'
+            element={<FacilitiesandAttraction />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

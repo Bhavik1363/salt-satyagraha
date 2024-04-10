@@ -152,12 +152,13 @@
     left: 0;
     bottom: 0;
     z-index: -1;
+    height: 350px;
 }
 
 .talkbot-container {
     position: fixed;
     right: 50px;
-    bottom: 100px;
+    bottom: 50px;
 
     display: flex;
     justify-content: center;

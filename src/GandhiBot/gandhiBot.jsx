@@ -50,13 +50,11 @@ export default function GandhiBot() {
     if (listening && !speaking) {
       recognition.start()
       recognition.onend = () => {
-        console.log('...continue listening...')
         recognition.start()
       }
     } else {
       recognition.stop()
       recognition.onend = () => {
-        console.log('Stopped listening per click')
         document.getElementById('micButton').checked = false
       }
     }
@@ -85,12 +83,10 @@ export default function GandhiBot() {
 
       const transcriptArr = finalTranscript.split(' ')
       const stopCmd = transcriptArr.slice(-3, -1)
-      console.log('stopCmd', stopCmd)
 
       if (stopCmd[0] === 'stop' && stopCmd[1] === 'listening') {
         recognition.stop()
         recognition.onend = () => {
-          console.log('Stopped listening per command')
           const finalText = transcriptArr.slice(0, -3).join(' ')
           document.getElementById('final').value = finalText
           document.getElementById('micButton').checked = false
@@ -101,13 +97,12 @@ export default function GandhiBot() {
     //-----------------------------------------------------------------------
 
     recognition.onerror = event => {
-      console.log('Error occurred in recognition: ' + event.error)
+      console.error('Error occurred in recognition: ' + event.error)
     }
   }
 
   const fetchResponse = () => {
-    let queryText = document.getElementById('final').value
-    console.log('Fetching response', queryText)
+    let queryText = document.getElementById('final').value;
     if (queryText) {
       axios
         .post(`${baseUrls.serverUrl}activities/dialogflow`, {
@@ -150,7 +145,7 @@ export default function GandhiBot() {
           }
         })
         .catch(err => {
-          console.log('getting error while fetching response', err)
+          console.error('getting error while fetching response', err)
         })
     }
   }

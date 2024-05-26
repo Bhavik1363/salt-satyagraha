@@ -5,9 +5,9 @@ import './social.css'
 import wholeBGImg from '../images/Whole BG.png'
 import { Grid, Typography } from '@mui/material'
 
-import fbQRImg from '../images/social-media/fbi_qr-code.png'
+import fbQRImg from '../images/social-media/facebookQR.svg'
 import instaQRImg from '../images/social-media/insta_qrcode.png'
-import xQRImg from '../images/social-media/x_qr-code.png'
+import xQRImg from '../images/social-media/xQR.svg'
 import { LinkButton } from '../StyledMaterialComponents'
 
 export default function SocialMedia() {
@@ -58,10 +58,10 @@ export default function SocialMedia() {
               <img src={fbQRImg} alt='' />
               <span>Facebook</span>
             </li>
-            <li>
+            {/* <li>
               <img src={instaQRImg} alt='' />
               <span>Instagram</span>
-            </li>
+            </li> */}
             <li>
               <img src={xQRImg} alt='' />
               <span>X (Twitter)</span>

@@ -1,11 +1,10 @@
-
 .mainlogo {
     width: 120px;
     height: 120px;
     /* float: right; */
     display: block;
     margin: 10px 10px 0 auto;
-  }
+}
 
 .circle-menu li {
     list-style: none;
@@ -52,10 +51,10 @@
     margin-top: 5px;
 }
 
+
 /* 360/6= 60  so for 6 elements rotate the element every 60deg. 10em translate is half the circle-menu width */
 
 .circle-menu .spiritual {
-    
     transform: rotate(60deg) translate(10em) rotate(-60deg);
     -webkit-transform: rotate(60deg) translate(10em) rotate(-60deg);
     -ms-transform: rotate(60deg) translate(10em) rotate(-60deg);
@@ -71,49 +70,49 @@
     transform: rotate(180deg) translate(10em) rotate(-180deg);
     -webkit-transform: rotate(180deg) translate(10em) rotate(-180deg);
     -ms-transform: rotate(180deg) translate(10em) rotate(-180deg);
-
-   
 }
 
 .circle-menu .environmental {
     transform: rotate(240deg) translate(10em) rotate(-240deg);
     -webkit-transform: rotate(240deg) translate(10em) rotate(-240deg);
     -ms-transform: rotate(240deg) translate(10em) rotate(-240deg);
-
-   
 }
 
 .circle-menu .intellectual {
     transform: rotate(300deg) translate(10em) rotate(-300deg);
     -webkit-transform: rotate(300deg) translate(10em) rotate(-300deg);
     -ms-transform: rotate(300deg) translate(10em) rotate(-300deg);
-
 }
 
 .circle-menu .social {
     transform: rotate(360deg) translate(10em) rotate(-360deg);
     -webkit-transform: rotate(360deg) translate(10em) rotate(-360deg);
     -ms-transform: rotate(360deg) translate(10em) rotate(-360deg);
-
 }
 
-
-
 @keyframes circle {
-    from { transform:rotate(0deg); }
-    to { transform:rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes inner-circle {
-    from { transform:rotate(0deg); }
-    to { transform:rotate(-360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
 }
 
 #rotator {
-   width:400px;
-    height:400px;
-    margin:20px auto;
-    line-height:1;
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    line-height: 1;
     border: 3px solid #922731;
     border-radius: 50%;
     position: relative;
@@ -122,12 +121,16 @@
 .rotatoranimation {
     animation: circle 20s linear infinite;
     transform-origin: 50% 50%;
-
 }
 
-#rotator > div {
-    width:120px;
-    height:120px;
+.rotatoranimation:hover,
+.rotatoranimation:hover>.rotatordivanimation {
+    animation-play-state: paused;
+}
+
+#rotator>div {
+    width: 120px;
+    height: 120px;
     display: flex;
     border-radius: 50%;
     justify-content: center;
@@ -138,13 +141,12 @@
     transition: transform 0.5s linear;
 }
 
-#rotator > div:hover {
+#rotator>div:hover {
     transform: scale(1.2);
 }
 
 .rotatordivanimation {
     animation: inner-circle 20s linear infinite;
-
 }
 
 .wholebg {
@@ -159,66 +161,85 @@
     position: fixed;
     right: 50px;
     bottom: 50px;
-
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
     cursor: pointer;
-
+    text-decoration: none;
+    color: #000;
 }
 
 @-ms-keyframes spin_1 {
-    from { -ms-transform: rotate(0deg); }
-    to { -ms-transform: rotate(360deg); }
-  }
+    from {
+        -ms-transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+    }
+}
 
-  @-moz-keyframes spin_1 {
-    from { -moz-transform: rotate(0deg); }
-    to { -moz-transform: rotate(360deg); }
-  }
+@-moz-keyframes spin_1 {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
 
-  @-webkit-keyframes spin_1 {
-    from { -webkit-transform: rotate(0deg); }
-    to { -webkit-transform: rotate(360deg); }
-  }
+@-webkit-keyframes spin_1 {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
 
-  @keyframes spin_1 {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
+@keyframes spin_1 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 
-  @keyframes circle {
-    from { transform:rotate(0deg); }
-    to { transform:rotate(360deg); }
+@keyframes circle {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes inner-circle {
-    from { transform:rotate(0deg); }
-    to { transform:rotate(-360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
 }
-
 
 @media screen and (max-width: 640px) {
     .circle-menu {
         width: 20em;
         height: 20em;
     }
-
     .wholebg {
         right: 0;
         width: 100%;
     }
-
     .circle-container {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
-
-    .circle-menu a span  {
+    .circle-menu a span {
         font-size: 13px;
     }
- }
+}

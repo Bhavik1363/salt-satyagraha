@@ -22,6 +22,8 @@ import slider2Img from '../images/nearby places/02.jpg'
 import slider3Img from '../images/nearby places/03.jpg'
 import slider4Img from '../images/nearby places/04.jpg'
 import slider5Img from '../images/nearby places/05.jpg'
+import axios from 'axios'
+import baseUrls from '../base-urls'
 
 const settings = {
   dots: false,
@@ -58,7 +60,39 @@ export default function Contactus() {
   }
 
   const handleSubmitData = () => {
-    console.log('userObj', userObj)
+    const mailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,7}$/
+    if (userObj.name === '') {
+      alert('Please enter a name');
+    } else if (userObj.email === '') {
+      alert('Please enter a email');
+    } else if (!mailPattern.test(userObj.email)) {
+      alert('Please enter a valid email');
+    } else if (userObj.mobileNo === '') {
+      alert('Please enter a mobile number');
+    } else if (userObj.mobileNo.length !== 10) {
+      alert('Please enter a valid mobile number');
+    } else if (userObj.details === '') {
+      alert('Please enter a message');
+    } else {
+      axios
+        .post(`${baseUrls.serverUrl}sendMail/sst`, {
+          senderName: 'SSTBhimrad',
+          userName: userObj.name,
+          userEmail: userObj.email,
+          userNumber: userObj.mobileNo,
+          userMsg: userObj.details,
+        }).then(() => {
+          alert('We have successfully received your inquiry');
+          setUserObj({
+            name: '',
+            mobileNo: '',
+            email: '',
+            details: ''
+          })
+        }).catch((err) => {
+          alert('An error occurred while sending the inquiry');
+        });
+    }
   }
 
   return (
@@ -222,7 +256,7 @@ export default function Contactus() {
 
               <TabPanel value='3' sx={{ height: '70vh' }}>
                 <iframe
-                  src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.59516604371!2d72.8001095!3d21.128700199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0521f6bbce9bd%3A0xbf2416d3b3a7be8b!2sBhimrad%2C%20Surat%2C%20Gujarat%20395007!5e0!3m2!1sen!2sin!4v1712741855686!5m2!1sen!2sin'
+                  src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1860.799323135336!2d72.79880565462923!3d21.12856155109903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be053006773912f%3A0x861695ee28b9a671!2sGandhi%20Smarak!5e0!3m2!1sen!2sin!4v1716739050152!5m2!1sen!2sin'
                   width='600'
                   height='450'
                   style={{ border: 0, height: '100%', width: '90%' }}
@@ -275,7 +309,7 @@ export default function Contactus() {
                   <StyledTab label='Contact us' value='1' />
                   <StyledTab label='Near by places' value='2' />
                   <StyledTab label='How to reach' value='3' />
-                  <StyledTab label='Accomodation' value='4' />
+                  {/* <StyledTab label='Accomodation' value='4' /> */}
                 </StyledTabs>
               </Box>
             </TabContext>

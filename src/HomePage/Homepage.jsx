@@ -23,7 +23,7 @@ export default function Homepage() {
   })
   useEffect(() => {
     animationCall()
-  }, [])
+  })
 
   const animationCall = () => {
     $('document').ready(function () {
@@ -52,39 +52,6 @@ export default function Homepage() {
         })
       }
     })
-  }
-
-  const getRotationAngle = ( elid ) => {
-    var el = $(elid)[0];
-    var style = window.getComputedStyle(el, null);
-    var transform = style.getPropertyValue("-webkit-transform") ||
-         style.getPropertyValue("-moz-transform") ||
-         style.getPropertyValue("-ms-transform") ||
-         style.getPropertyValue("-o-transform") ||
-         style.getPropertyValue("transform") ||
-         "fail...";
-  
-    if( transform !== "none") {
-  
-      var values = transform.split('(')[1];
-        values = values.split(')')[0];
-        values = values.split(',');
-      var a = values[0];
-      var b = values[1];
-      var c = values[2];
-      var d = values[3];
-
-      var radians = Math.atan2(b, a);
-  
-      if ( radians < 0 ) {
-        radians += (2 * Math.PI);
-      }
-      var angle = Math.round( radians * (180/Math.PI));
-    } else {
-      var angle = 0;
-    }
-    
-    return angle
   }
   
 

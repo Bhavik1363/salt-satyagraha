@@ -256,7 +256,7 @@ export default function Contactus() {
 
               <TabPanel value='3' sx={{ height: '70vh' }}>
                 <iframe
-                  src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1860.799323135336!2d72.79880565462923!3d21.12856155109903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be053006773912f%3A0x861695ee28b9a671!2sGandhi%20Smarak!5e0!3m2!1sen!2sin!4v1716739050152!5m2!1sen!2sin'
+                  src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1860.7993225216062!2d72.7988057!3d21.1285616!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be05300319262df%3A0xd4be8a5aabb0f730!2sGandhi%20Auditorium!5e0!3m2!1sen!2sin!4v1716741828484!5m2!1sen!2sin'
                   width='600'
                   height='450'
                   style={{ border: 0, height: '100%', width: '90%' }}

@@ -164,6 +164,17 @@ export default function Contactus() {
                   >
                     <Grid container spacing={1} width={'100%'} margin={0}>
                       <Grid item xs={12} md={12} lg={12}>
+                        <Typography
+                          variant='body1'
+                          sx={{
+                            fontFamily: ['Inter', 'sans-serif'].join(','),
+                            textAlign: 'left'
+                          }}
+                        >
+                          {'For any constructive project/ programs kindly contact'}
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={12} md={12} lg={12}>
                         <RedditTextField
                           label='Name'
                           id='reddit-input'

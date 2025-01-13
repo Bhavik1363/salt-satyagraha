@@ -413,9 +413,10 @@ export default function SaltSatyagrah() {
                   Bhimrad, Surat. Gandhiji had uttered the words during this
                   gathering that ‘For the first time I am able to forsee the
                   independence of India in the resolve and numbers of the people
-                  gathered here today’. Gandhiji’s two sons, Ramdas Gandhi and
-                  XYZ Gandhi were arrested from Bhimrad for breaking the salt
-                  law.
+                  gathered here today’. On April 6<sup>th</sup>, 1930 gandhiji broke the salt law.
+                  On the same day, Ramdas Gandhi broke the salt law in Bhimrad and caught imprisonment.
+                  Gandhi ji therefore sent another son Manilal to continue the satyagrah at Bhimrad.
+                  Thus two members of gandhi family led the salt satyagrah simontaneously with Dandi and Bhimrad and caught imprisonment.
                 </Typography>
                 <Typography
                   variant='h6'

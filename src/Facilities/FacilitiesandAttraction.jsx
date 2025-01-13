@@ -343,8 +343,8 @@ export default function FacilitiesandAttraction () {
                       }}
                     >
                       This approach mirrors Gandhi's dedication to uplifting the
-                      poorest and most marginalized sections of society,
-                      ensuring that the benefits of technology reach everyone.
+                      poorest of poor "અંત્યોદય" (The doctarine of Antyoday) and most marginalized sections of society,
+                      ensuring that the benefits of appropriate technology reach everyone.
                     </Typography>
                     <Typography
                       variant='h6'

@@ -92,7 +92,7 @@ export default function SatyagrahSamrutiTrust() {
                       Maitri Trust, the government of late shri Chimanbhai Patel
                       had allocated five hectares of land in Bhimrad surrounding
                       the current development site for highlighting the history
-                      and importance of Bhimrad during the salt satyagrah.
+                      and importance of Bhimrad and nearby villagers during the salt satyagrah.
                     </Typography>
                     <Typography
                       variant='h6'
@@ -204,7 +204,7 @@ export default function SatyagrahSamrutiTrust() {
                         marginY: 1
                       }}
                     >
-                      . Shri Parimalbhai and Shri Hardikbhai found out the
+                      Shri Parimalbhai and Shri Hardikbhai found out the
                       resolutions passed in 1990 acknowledging the allotment of
                       land by the then government for this historical purpose,
                       and even helped by bringing more Gandhi Family members in

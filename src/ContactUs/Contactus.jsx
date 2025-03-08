@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Grid, Typography } from '@mui/material'
 import {
   FilledButton,
@@ -11,7 +11,8 @@ import {
 import TabContext from '@mui/lab/TabContext'
 import TabPanel from '@mui/lab/TabPanel'
 import { isMobile } from 'react-device-detect'
-import Slider from 'react-slick'
+import Slider from 'react-slick';
+import sst_location from '../images/location/sst_location.webp';
 
 import bhimradImg from '../images/bhimrad.png'
 import './contact.css'
@@ -49,6 +50,25 @@ export default function Contactus() {
   const handleChange = (event, newValue) => {
     setValue(newValue)
   }
+
+  useEffect(() => {
+    if (value == '3') {
+      var iframe = document.getElementById('google-map');
+      var placeholder = document.getElementById('map-placeholder');
+
+      setTimeout(function () {
+        console.log('Loading Google Map...');
+        iframe.src = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1860.7993225216062!2d72.7988057!3d21.1285616!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be05300319262df%3A0xd4be8a5aabb0f730!2sGandhi%20Auditorium!5e0!3m2!1sen!2sin!4v1716741828484!5m2!1sen!2sin";
+
+        // Wait for the iframe to fully load before showing it
+        iframe.onload = function () {
+          console.log('Google Map loaded!');
+          iframe.style.display = 'block';  // Show the map
+          placeholder.style.display = 'none'; // Hide placeholder
+        };
+      }, 1500);
+    }
+  }, [value])
 
   const handleChangeValue = e => {
     const { name, value } = e.target
@@ -266,15 +286,20 @@ export default function Contactus() {
               </TabPanel>
 
               <TabPanel value='3' sx={{ height: '70vh' }}>
-                <iframe
-                  src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1860.7993225216062!2d72.7988057!3d21.1285616!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be05300319262df%3A0xd4be8a5aabb0f730!2sGandhi%20Auditorium!5e0!3m2!1sen!2sin!4v1716741828484!5m2!1sen!2sin'
-                  width='600'
-                  height='450'
-                  style={{ border: 0, height: '100%', width: '90%' }}
-                  allowfullscreen=''
-                  loading='lazy'
-                  referrerpolicy='no-referrer-when-downgrade'
-                ></iframe>
+                <div id="map-container" style={{ position: "relative", width: "100%", height: "100%" }}>
+                  <img id="map-placeholder"
+                    src={sst_location}
+                    alt="Google Map Placeholder"
+                    style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0, zIndex: 1 }} />
+
+                  <iframe
+                    id="google-map"
+                    width='100%'
+                    height='100%'
+                    style={{ border: 0, display: "none", height: '100%', width: '100%' }}
+                    loading='lazy'
+                  ></iframe>
+                </div>
               </TabPanel>
 
               <TabPanel value='4' sx={{ height: '70vh' }}>

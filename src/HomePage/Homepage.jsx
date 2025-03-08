@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './homepage.css'
 import saltSatyagrahImg from '../images/saltSatyagrah.svg'
 import satyagrahTrustImg from '../images/SatyagrahTrust.svg'
@@ -14,13 +14,21 @@ import talkbotImg from '../images/Talkbot.svg'
 
 import { isMobile } from 'react-device-detect'
 
-import $ from 'jquery'
+import $ from 'jquery';
+import { t } from 'i18n-js';
+import LocaleContext from '../i18n/LocaleContext';
+import { FormControl, Grid, MenuItem, Select, Typography } from '@mui/material'
+import { ExpandMore } from '@mui/icons-material'
+// import { I18n } from 'i18n-js'
 
 export default function Homepage() {
+  const { changeLocale } = useContext(LocaleContext)
 
   const [defaultRotarSetting, setDefaultRotarSetting] = useState({
     angle: 0
   })
+  const [lang, setLang] = useState('en');
+
   useEffect(() => {
     animationCall()
   })
@@ -53,7 +61,7 @@ export default function Homepage() {
       }
     })
   }
-  
+
 
   return (
     <React.Fragment>
@@ -110,35 +118,149 @@ export default function Homepage() {
           </div>
         </div>
       ) : (
-        <div id='rotator'>
-          <div onClick={() => (window.location.href = '/salt-satyagrah')}>
-            <img src={saltSatyagrahImg} alt='' />
-            <span>Salt Satyagrah</span>
+        <>
+          <div id='rotator'>
+            <div onClick={() => (window.location.href = '/salt-satyagrah')}>
+              <img src={saltSatyagrahImg} alt='' />
+              <span>Salt Satyagrah</span>
+            </div>
+            <div onClick={() => (window.location.href = '/satyagrah-smruti-trust')}>
+              <img src={satyagrahTrustImg} alt='' />
+              <span>Satyagrah Smruti Trust</span>
+            </div>
+            <div onClick={() => (window.location.href = '/contact-us')}>
+              {' '}
+              <img src={contactUsImg} alt='' />
+              <span>Contact Us</span>
+            </div>
+            <div onClick={() => (window.location.href = '/social-media')}>
+              {' '}
+              <img src={SocialMediaImg} alt='' />
+              <span>Social Media</span>
+            </div>
+            <div onClick={() => (window.location.href = '/historic-evidences')}>
+              <img src={HistoricalImg} alt='' />
+              <span>Historical Evidences</span>
+            </div>
+            <div onClick={() => (window.location.href = '/facility-and-attraction')}>
+              {' '}
+              <img src={FacilitiesImg} alt='' />
+              <span>Facilities & Attractions</span>
+            </div>
           </div>
-          <div onClick={() => (window.location.href = '/satyagrah-smruti-trust')}>
-            <img src={satyagrahTrustImg} alt='' />
-            <span>Satyagrah Smruti Trust</span>
-          </div>
-          <div onClick={() => (window.location.href = '/contact-us')}>
-            {' '}
-            <img src={contactUsImg} alt='' />
-            <span>Contact Us</span>
-          </div>
-          <div onClick={() => (window.location.href = '/social-media')}>
-            {' '}
-            <img src={SocialMediaImg} alt='' />
-            <span>Social Media</span>
-          </div>
-          <div onClick={() => (window.location.href = '/historic-evidences')}>
-            <img src={HistoricalImg} alt='' />
-            <span>Historical Evidences</span>
-          </div>
-          <div onClick={() => (window.location.href = '/facility-and-attraction')}>
-            {' '}
-            <img src={FacilitiesImg} alt='' />
-            <span>Facilities & Attractions</span>
-          </div>
-        </div>
+          <>
+            <Grid container spacing={1}>
+              <Grid item md={4} lg={4}></Grid>
+              <Grid item md={4} lg={4}>
+                <FormControl fullWidth>
+                  <Select
+                    labelId='lang'
+                    id='lang'
+                    fullWidth
+                    defaultValue='-1'
+                    value={lang}
+                    onChange={e => {
+                      changeLocale(e.target.value)
+                      setLang(e.target.value);
+                    }}
+                    IconComponent={ExpandMore}
+                  >
+                    <MenuItem key='-1' value='-1' disabled>
+                      <strong
+                        style={{ color: '#303030' }}
+                      >
+                        <em>{t('select_lang')}</em>
+                      </strong>
+                    </MenuItem>
+                    <MenuItem
+                      value={'en'}
+                      sx={{
+                        fontWeight: 500,
+                        color: '#303030',
+                        textOverflow: 'ellipsis',
+                        width: '100%',
+                        overflow: 'hidden'
+                      }}
+                    >
+                      <Typography
+                        variant='body1'
+                        sx={{
+                          fontWeight: 500,
+                          color: '#303030',
+                          textOverflow: 'ellipsis',
+                          width: '100%',
+                          overflow: 'hidden'
+                        }}
+                      >
+                        {t('english')}
+                      </Typography>
+                    </MenuItem>
+                    <MenuItem
+                      value={'gu'}
+                      sx={{
+                        fontWeight: 500,
+                        color: '#303030',
+                        textOverflow: 'ellipsis',
+                        width: '100%',
+                        overflow: 'hidden'
+                      }}
+                    >
+                      <Typography
+                        variant='body1'
+                        sx={{
+                          fontWeight: 500,
+                          color: '#303030',
+                          textOverflow: 'ellipsis',
+                          width: '100%',
+                          overflow: 'hidden'
+                        }}
+                      >
+                        {t('gujarati')}
+                      </Typography>
+                    </MenuItem>
+                    <MenuItem
+                      value={'hn'}
+                      sx={{
+                        fontWeight: 500,
+                        color: '#303030',
+                        textOverflow: 'ellipsis',
+                        width: '100%',
+                        overflow: 'hidden'
+                      }}
+                    >
+                      <Typography
+                        variant='body1'
+                        sx={{
+                          fontWeight: 500,
+                          color: '#303030',
+                          textOverflow: 'ellipsis',
+                          width: '100%',
+                          overflow: 'hidden'
+                        }}
+                      >
+                        {t('hindi')}
+                      </Typography>
+                    </MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item md={4} lg={4}>
+                <Typography
+                  variant='body1'
+                  sx={{
+                    fontWeight: 500,
+                    color: '#303030',
+                    textOverflow: 'ellipsis',
+                    width: '100%',
+                    overflow: 'hidden'
+                  }}
+                >
+                  {t('name')}
+                </Typography>
+              </Grid>
+            </Grid>
+          </>
+        </>
       )}
 
       <img src={wholeBGImg} alt='' className='wholebg' />

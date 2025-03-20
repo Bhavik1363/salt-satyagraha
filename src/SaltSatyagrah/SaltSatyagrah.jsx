@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { Box, Grid, Typography } from '@mui/material'
 import React, { useState } from 'react'
-import { isMobile } from 'react-device-detect'
+import { isMobile, isTablet } from 'react-device-detect'
 
 import TabContext from '@mui/lab/TabContext'
 import TabPanel from '@mui/lab/TabPanel'
@@ -50,7 +50,7 @@ export default function SaltSatyagrah() {
                   Back
                 </LinkButton>
               </Grid>
-              <Grid item xs={12} md={6} lg={6} sx={{ height: '75vh' }}>
+              <Grid item xs={12} md={6} lg={6} sx={{ height: (isMobile || isTablet) ? '40vh' : '75vh' }}>
                 <img src={GandhiBapuImg} alt='' className='sideimg' />
               </Grid>
               <Grid
@@ -59,7 +59,7 @@ export default function SaltSatyagrah() {
                 md={6}
                 lg={6}
                 sx={{
-                  height: '77vh',
+                  height: (isMobile || isTablet) ? '40vh' : '77vh',
                   overflowY: 'auto',
                   // scrollSnapType: 'y mandatory',
                   '::-webkit-scrollbar': {
@@ -144,7 +144,7 @@ export default function SaltSatyagrah() {
                   Back
                 </LinkButton>
               </Grid>
-              <Grid item xs={12} md={6} lg={6} sx={{ height: '75vh' }}>
+              <Grid item xs={12} md={6} lg={6} sx={{ height: (isMobile || isTablet) ? '40vh' : '75vh' }}>
                 <img src={GandhiBapu2Img} alt='' className='sideimg' />
               </Grid>
 
@@ -154,7 +154,7 @@ export default function SaltSatyagrah() {
                 md={6}
                 lg={6}
                 sx={{
-                  height: '77vh',
+                  height: (isMobile || isTablet) ? '40vh' : '77vh',
                   overflowY: 'auto',
                   // scrollSnapType: 'y mandatory',
                   '::-webkit-scrollbar': {
@@ -367,7 +367,7 @@ export default function SaltSatyagrah() {
                   Back
                 </LinkButton>
               </Grid>
-              <Grid item xs={12} md={6} lg={6} sx={{ height: '75vh' }}>
+              <Grid item xs={12} md={6} lg={6} sx={{ height: (isMobile || isTablet) ? '40vh' : '75vh' }}>
                 <img src={GandhiBapu3Img} alt='' className='sideimg' />
               </Grid>
 
@@ -377,7 +377,7 @@ export default function SaltSatyagrah() {
                 md={6}
                 lg={6}
                 sx={{
-                  height: '77vh',
+                  height: (isMobile || isTablet) ? '40vh' : '77vh',
                   overflowY: 'auto',
                   // scrollSnapType: 'y mandatory',
                   '::-webkit-scrollbar': {

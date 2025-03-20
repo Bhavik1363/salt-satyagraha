@@ -80,36 +80,36 @@ export default function Homepage() {
                 </a>
               </li>
 
-              <li>
-                <a className='occupational' href='#'>
+              <li onClick={() => (window.location.href = '/satyagrah-smruti-trust')}>
+                <a className='occupational' href='/satyagrah-smruti-trust'>
                   <img src={satyagrahTrustImg} alt='' />
                   <span>Satyagrah Smruti Trust</span>
                 </a>
               </li>
 
-              <li>
-                <a className='emotional' href='#'>
+              <li onClick={() => (window.location.href = '/contact-us')}>
+                <a className='emotional' href='/contact-us'>
                   <img src={contactUsImg} alt='' />
                   <span>Contact Us</span>
                 </a>
               </li>
 
-              <li>
-                <a className='environmental' href='#'>
+              <li onClick={() => (window.location.href = '/social-media')}>
+                <a className='environmental' href='/social-media'>
                   <img src={SocialMediaImg} alt='' />
                   <span>Social Media</span>
                 </a>
               </li>
 
-              <li onClick={() => (window.location.href = 'historic-evidences')}>
-                <a className='intellectual' href='#'>
+              <li onClick={() => (window.location.href = '/historic-evidences')}>
+                <a className='intellectual' href='/historic-evidences'>
                   <img src={HistoricalImg} alt='' />
                   <span>Historical Evidences</span>
                 </a>
               </li>
 
-              <li>
-                <a className='social' href='#'>
+              <li onClick={() => (window.location.href = '/facility-and-attraction')}>
+                <a className='social' href='/facility-and-attraction'>
                   <img src={FacilitiesImg} alt='' />
                   <span>Facilities & Attractions</span>
                 </a>

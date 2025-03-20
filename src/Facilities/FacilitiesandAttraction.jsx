@@ -153,7 +153,7 @@ export default function FacilitiesandAttraction () {
                 <Grid container spacing={1}>
                   <Grid
                     item
-                    xs={6}
+                    xs={12}
                     md={6}
                     lg={6}
                     sx={{

@@ -232,6 +232,7 @@
     .wholebg {
         right: 0;
         width: 100%;
+        height: auto;
     }
     .circle-container {
         position: absolute;
@@ -241,5 +242,9 @@
     }
     .circle-menu a span {
         font-size: 13px;
+    }
+
+    .talkbot-container {
+        position: absolute;
     }
 }

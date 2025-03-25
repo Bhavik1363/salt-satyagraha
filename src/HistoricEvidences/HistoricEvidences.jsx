@@ -59,7 +59,7 @@ export default function HistoricEvidences() {
           <Typography
             variant='h3'
             sx={{
-              fontFamily: ['Inter', 'sans-serif'].join(','),
+              fontFamily: "var(--main-font-family)",
               fontWeight: 600,
               textAlign: 'left'
             }}

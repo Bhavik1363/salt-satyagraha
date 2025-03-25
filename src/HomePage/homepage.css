@@ -39,7 +39,7 @@
     color: #000;
     background: #fff;
     box-sizing: border-box;
-    font-family: "Inter", sans-serif;
+    font-family: var(--main-font-family);
     transition: all ease-in-out 5s;
 }
 

@@ -78,7 +78,7 @@
     position: absolute;
     width: 50px;
     color: #ed9254;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--main-font-family);
     font-weight: bold;
     text-align: center;
     line-height: 20px;

@@ -23,7 +23,7 @@ const StyledTab = styled(props => <Tab disableRipple {...props} />)(
   ({ theme }) => ({
     textTransform: 'none',
     fontWeight: 500,
-    fontFamily: ['Inter', 'sans-serif'].join(','),
+    // fontFamily: "var(--main-font-family)",
     fontSize: 15,
     marginRight: 1,
     color: '#000000',
@@ -39,7 +39,7 @@ const StyledTab = styled(props => <Tab disableRipple {...props} />)(
 const LinkButton = styled(Button)(({ theme }) => ({
   textTransform: 'capitalize',
   color: '#000000',
-  fontFamily: ['Inter', 'sans-serif'].join(','),
+  fontFamily: "var(--main-font-family)",
   fontWeight: 500
   // color: theme.palette.getContrastText(purple[500]),
   // backgroundColor: purple[500],
@@ -85,7 +85,7 @@ const RedditTextField = styled(props => (
     }
   },
   '& .MuiInputLabel-root': {
-    fontFamily: ['Inter', 'sans-serif'].join(','),
+    fontFamily: "var(--main-font-family)",
     fontWeight: 500,
     color: '#000000',
     fontSize: '1.1rem',

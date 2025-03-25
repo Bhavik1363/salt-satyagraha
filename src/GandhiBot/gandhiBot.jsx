@@ -169,7 +169,7 @@ export default function GandhiBot() {
           <Typography
             variant='h3'
             sx={{
-              fontFamily: ['Inter', 'sans-serif'].join(','),
+              fontFamily: "var(--main-font-family)",
               textAlign: 'left'
             }}
           >
@@ -263,7 +263,7 @@ export default function GandhiBot() {
                   disableTypography
                   sx={{
                     cursor: 'pointer',
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     fontWeight: 600
                   }}
                   onClick={() => {
@@ -279,7 +279,7 @@ export default function GandhiBot() {
                   disableTypography
                   sx={{
                     cursor: 'pointer',
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     fontWeight: 600
                   }}
                   onClick={() => {
@@ -295,7 +295,7 @@ export default function GandhiBot() {
                   disableTypography
                   sx={{
                     cursor: 'pointer',
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     fontWeight: 600
                   }}
                   onClick={() => {

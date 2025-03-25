@@ -31,7 +31,7 @@ export default function SocialMedia() {
           <Typography
             variant='h3'
             sx={{
-              fontFamily: ['Inter', 'sans-serif'].join(','),
+              fontFamily: "var(--main-font-family)",
               textAlign: 'left'
             }}
           >

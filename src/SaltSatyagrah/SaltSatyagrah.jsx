@@ -10,6 +10,7 @@ import GandhiBapuImg from '../images/Gandhi Bapu Salt Satyagrah.png'
 import GandhiBapu2Img from '../images/Gandhi2.png'
 import GandhiBapu3Img from '../images/Gandhi3.png'
 import './saltsatyagrah.css'
+import { t } from 'i18n-js';
 
 export default function SaltSatyagrah() {
   const [value, setValue] = useState('1')
@@ -28,7 +29,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h3'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     opacity: 0
                   }}
@@ -47,7 +48,7 @@ export default function SaltSatyagrah() {
                 }}
               >
                 <LinkButton onClick={() => (window.location.href = '/')}>
-                  Back
+                  {t('back')}
                 </LinkButton>
               </Grid>
               <Grid item xs={12} md={6} lg={6} sx={{ height: (isMobile || isTablet) ? '40vh' : '75vh' }}>
@@ -72,47 +73,41 @@ export default function SaltSatyagrah() {
                   sx={{
                     // scrollSnapAlign: 'start',
                     fontWeight: 600,
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left'
                   }}
                 >
-                  Salt Satyagrah
+                  {t('salt_satyagrah')}
                 </Typography>
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}
                 >
-                  The Salt March, also known as the Dandi March, was a pivotal
-                  event in the Indian independence movement against British
-                  colonial rule.
+                  {t('the_salt_march_also_known_as_the_dandi_march_was_a_pivotal_event_in_the_indian_independence_movement_against_british_colonial_rule')}
                 </Typography>
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}
                 >
-                  Orchestrated by Mohandas Karamchand Gandhi, it marked a
-                  significant escalation in the campaign of nonviolent
-                  resistance and civil disobedience in India.
+                  {t('orchestrated_by_mohandas_karamchand_gandhi_it_marked_a_significant_escalation_in_the_campaign_of_nonviolent_resistance_and_civil_disobedience_in_india')}
                 </Typography>
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}
                 >
-                  The march took place from March 12 to April 6, 1930, and was a
-                  direct action campaign of tax resistance and nonviolent
-                  protest against the British salt monopoly.
+                  {t('the_march_took_place_from_march_12_to_april_6_1930_and_was_a_direct_action_campaign_of_tax_resistance_and_nonviolent_protest_against_the_british_salt_monopoly')}
                 </Typography>
               </Grid>
             </Grid>
@@ -123,7 +118,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h3'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left'
                   }}
                 >
@@ -167,7 +162,7 @@ export default function SaltSatyagrah() {
                   sx={{
                     // scrollSnapAlign: 'start',
                     fontWeight: 600,
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left'
                   }}
                 >
@@ -177,7 +172,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}
@@ -189,7 +184,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}
@@ -201,7 +196,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}
@@ -216,7 +211,7 @@ export default function SaltSatyagrah() {
                   sx={{
                     // scrollSnapAlign: 'start',
                     fontWeight: 600,
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left'
                   }}
                 >
@@ -226,7 +221,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}
@@ -239,7 +234,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}
@@ -250,7 +245,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}
@@ -266,7 +261,7 @@ export default function SaltSatyagrah() {
                   sx={{
                     // scrollSnapAlign: 'start',
                     fontWeight: 600,
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left'
                   }}
                 >
@@ -276,7 +271,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}
@@ -291,7 +286,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}
@@ -306,7 +301,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}
@@ -323,7 +318,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}
@@ -346,7 +341,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h3'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left'
                   }}
                 >
@@ -388,7 +383,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}
@@ -403,7 +398,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}
@@ -421,7 +416,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}
@@ -439,7 +434,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}
@@ -458,7 +453,7 @@ export default function SaltSatyagrah() {
                 <Typography
                   variant='h6'
                   sx={{
-                    fontFamily: ['Inter', 'sans-serif'].join(','),
+                    fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
                     marginY: 1
                   }}

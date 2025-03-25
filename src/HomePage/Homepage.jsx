@@ -17,8 +17,8 @@ import { isMobile } from 'react-device-detect'
 import $ from 'jquery';
 import { t } from 'i18n-js';
 import LocaleContext from '../i18n/LocaleContext';
-import { FormControl, Grid, MenuItem, Select, Typography } from '@mui/material'
-import { ExpandMore } from '@mui/icons-material'
+import { Box, FormControl, Grid, IconButton, Menu, MenuItem, Select, Typography } from '@mui/material'
+import { ExpandMore, Translate } from '@mui/icons-material'
 // import { I18n } from 'i18n-js'
 
 export default function Homepage() {
@@ -28,6 +28,7 @@ export default function Homepage() {
     angle: 0
   })
   const [lang, setLang] = useState('en');
+  const [anchorEl, setAnchorEl] = useState(null);
 
   useEffect(() => {
     animationCall()
@@ -62,12 +63,175 @@ export default function Homepage() {
     })
   }
 
+  const handleLanguageChange = (code) => {
+    changeLocale(code);
+    setLang(code);
+    localStorage.setItem("lang", code); // Store language preference
+    setAnchorEl(null);
+  };
 
   return (
     <React.Fragment>
       <a href='/'>
         <img alt="satyagrah Smruti Trust" src={logoImg} className='mainlogo' />
       </a>
+
+      <Box
+        sx={{
+          position: "absolute",
+          right: 150,
+          top: 20,
+        }}
+      >
+        <IconButton onClick={(event) => setAnchorEl(event.currentTarget)}>
+          <Translate />
+        </IconButton>
+
+        <Menu
+          open={Boolean(anchorEl)}
+          anchorEl={anchorEl}
+          onClose={() => setAnchorEl(null)} // Close the menu when clicking outside
+        >
+          <MenuItem key="-1" value="-1" disabled>
+            <strong style={{ color: "#303030" }}>
+              <em>{t("select_lang")}</em>
+            </strong>
+          </MenuItem>
+          {[
+            { code: "en", label: t("english") },
+            { code: "gu", label: t("gujarati") },
+            { code: "hn", label: t("hindi") },
+          ].map(({ code, label }) => (
+            <MenuItem
+              key={code}
+              value={code}
+              sx={{
+                fontWeight: 500,
+                color: "#303030",
+                textOverflow: "ellipsis",
+                width: "100%",
+                overflow: "hidden",
+              }}
+              onClick={() => handleLanguageChange(code)}
+            >
+              <Typography
+                variant="body1"
+                sx={{
+                  fontWeight: 500,
+                  color: "#303030",
+                  textOverflow: "ellipsis",
+                  width: "100%",
+                  overflow: "hidden",
+                }}
+              >
+                {label}
+              </Typography>
+            </MenuItem>
+          ))}
+        </Menu>
+      </Box>
+
+
+      {/* <Box
+        sx={{
+          position: "absolute",
+          right: 150,
+          top: 20,
+        }}
+      >
+      
+
+        <Select
+          labelId='lang'
+          id='lang'
+          // fullWidth
+          defaultValue='-1'
+          value={lang}
+          onChange={e => {
+            changeLocale(e.target.value)
+            setLang(e.target.value);
+            localStorage.setItem("lang", e.target.value)
+          }}
+          IconComponent={ExpandMore}
+        >
+          <MenuItem key='-1' value='-1' disabled>
+            <strong
+              style={{ color: '#303030' }}
+            >
+              <em>{t('select_lang')}</em>
+            </strong>
+          </MenuItem>
+          <MenuItem
+            value={'en'}
+            sx={{
+              fontWeight: 500,
+              color: '#303030',
+              textOverflow: 'ellipsis',
+              width: '100%',
+              overflow: 'hidden'
+            }}
+          >
+            <Typography
+              variant='body1'
+              sx={{
+                fontWeight: 500,
+                color: '#303030',
+                textOverflow: 'ellipsis',
+                width: '100%',
+                overflow: 'hidden'
+              }}
+            >
+              {t('english')}
+            </Typography>
+          </MenuItem>
+          <MenuItem
+            value={'gu'}
+            sx={{
+              fontWeight: 500,
+              color: '#303030',
+              textOverflow: 'ellipsis',
+              width: '100%',
+              overflow: 'hidden'
+            }}
+          >
+            <Typography
+              variant='body1'
+              sx={{
+                fontWeight: 500,
+                color: '#303030',
+                textOverflow: 'ellipsis',
+                width: '100%',
+                overflow: 'hidden'
+              }}
+            >
+              {t('gujarati')}
+            </Typography>
+          </MenuItem>
+          <MenuItem
+            value={'hn'}
+            sx={{
+              fontWeight: 500,
+              color: '#303030',
+              textOverflow: 'ellipsis',
+              width: '100%',
+              overflow: 'hidden'
+            }}
+          >
+            <Typography
+              variant='body1'
+              sx={{
+                fontWeight: 500,
+                color: '#303030',
+                textOverflow: 'ellipsis',
+                width: '100%',
+                overflow: 'hidden'
+              }}
+            >
+              {t('hindi')}
+            </Typography>
+          </MenuItem>
+        </Select>
+      </Box> */}
 
       {isMobile ? (
         <div className='circle-container'>
@@ -118,149 +282,38 @@ export default function Homepage() {
           </div>
         </div>
       ) : (
-        <>
-          <div id='rotator'>
-            <div onClick={() => (window.location.href = '/salt-satyagrah')}>
-              <img src={saltSatyagrahImg} alt='' />
-              <span>Salt Satyagrah</span>
-            </div>
-            <div onClick={() => (window.location.href = '/satyagrah-smruti-trust')}>
-              <img src={satyagrahTrustImg} alt='' />
-              <span>Satyagrah Smruti Trust</span>
-            </div>
-            <div onClick={() => (window.location.href = '/contact-us')}>
-              {' '}
-              <img src={contactUsImg} alt='' />
-              <span>Contact Us</span>
-            </div>
-            <div onClick={() => (window.location.href = '/social-media')}>
-              {' '}
-              <img src={SocialMediaImg} alt='' />
-              <span>Social Media</span>
-            </div>
-            <div onClick={() => (window.location.href = '/historic-evidences')}>
-              <img src={HistoricalImg} alt='' />
-              <span>Historical Evidences</span>
-            </div>
-            <div onClick={() => (window.location.href = '/facility-and-attraction')}>
-              {' '}
-              <img src={FacilitiesImg} alt='' />
-              <span>Facilities & Attractions</span>
-            </div>
+
+        <div id='rotator'>
+          <div onClick={() => (window.location.href = '/salt-satyagrah')}>
+            <img src={saltSatyagrahImg} alt='' />
+            <span>{t('salt_satyagrah')}</span>
           </div>
-          <>
-            <Grid container spacing={1}>
-              <Grid item md={4} lg={4}></Grid>
-              <Grid item md={4} lg={4}>
-                <FormControl fullWidth>
-                  <Select
-                    labelId='lang'
-                    id='lang'
-                    fullWidth
-                    defaultValue='-1'
-                    value={lang}
-                    onChange={e => {
-                      changeLocale(e.target.value)
-                      setLang(e.target.value);
-                    }}
-                    IconComponent={ExpandMore}
-                  >
-                    <MenuItem key='-1' value='-1' disabled>
-                      <strong
-                        style={{ color: '#303030' }}
-                      >
-                        <em>{t('select_lang')}</em>
-                      </strong>
-                    </MenuItem>
-                    <MenuItem
-                      value={'en'}
-                      sx={{
-                        fontWeight: 500,
-                        color: '#303030',
-                        textOverflow: 'ellipsis',
-                        width: '100%',
-                        overflow: 'hidden'
-                      }}
-                    >
-                      <Typography
-                        variant='body1'
-                        sx={{
-                          fontWeight: 500,
-                          color: '#303030',
-                          textOverflow: 'ellipsis',
-                          width: '100%',
-                          overflow: 'hidden'
-                        }}
-                      >
-                        {t('english')}
-                      </Typography>
-                    </MenuItem>
-                    <MenuItem
-                      value={'gu'}
-                      sx={{
-                        fontWeight: 500,
-                        color: '#303030',
-                        textOverflow: 'ellipsis',
-                        width: '100%',
-                        overflow: 'hidden'
-                      }}
-                    >
-                      <Typography
-                        variant='body1'
-                        sx={{
-                          fontWeight: 500,
-                          color: '#303030',
-                          textOverflow: 'ellipsis',
-                          width: '100%',
-                          overflow: 'hidden'
-                        }}
-                      >
-                        {t('gujarati')}
-                      </Typography>
-                    </MenuItem>
-                    <MenuItem
-                      value={'hn'}
-                      sx={{
-                        fontWeight: 500,
-                        color: '#303030',
-                        textOverflow: 'ellipsis',
-                        width: '100%',
-                        overflow: 'hidden'
-                      }}
-                    >
-                      <Typography
-                        variant='body1'
-                        sx={{
-                          fontWeight: 500,
-                          color: '#303030',
-                          textOverflow: 'ellipsis',
-                          width: '100%',
-                          overflow: 'hidden'
-                        }}
-                      >
-                        {t('hindi')}
-                      </Typography>
-                    </MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-              <Grid item md={4} lg={4}>
-                <Typography
-                  variant='body1'
-                  sx={{
-                    fontWeight: 500,
-                    color: '#303030',
-                    textOverflow: 'ellipsis',
-                    width: '100%',
-                    overflow: 'hidden'
-                  }}
-                >
-                  {t('name')}
-                </Typography>
-              </Grid>
-            </Grid>
-          </>
-        </>
+          <div onClick={() => (window.location.href = '/satyagrah-smruti-trust')}>
+            <img src={satyagrahTrustImg} alt='' />
+            <span>{t('satyagrah_smruti_trust')}</span>
+          </div>
+          <div onClick={() => (window.location.href = '/contact-us')}>
+            {' '}
+            <img src={contactUsImg} alt='' />
+            <span>{t('contact_us')}</span>
+          </div>
+          <div onClick={() => (window.location.href = '/social-media')}>
+            {' '}
+            <img src={SocialMediaImg} alt='' />
+            <span>{t('social_media')}</span>
+          </div>
+          <div onClick={() => (window.location.href = '/historic-evidences')}>
+            <img src={HistoricalImg} alt='' />
+            <span>{t('historical_evidences')}</span>
+          </div>
+          <div onClick={() => (window.location.href = '/facility-and-attraction')}>
+            {' '}
+            <img src={FacilitiesImg} alt='' />
+            <span>{t('facilities_attractions')}</span>
+          </div>
+        </div>
+
+
       )}
 
       <img src={wholeBGImg} alt='' className='wholebg' />

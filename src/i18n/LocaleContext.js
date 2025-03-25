@@ -1,24 +1,37 @@
-import React, { createContext, useState } from 'react';
-import I18n, { setLocale } from './i18n'
+import React, { createContext, useState, useEffect } from 'react';
+import I18n from './i18n';
+
+let r = document.documentElement;
 
 export const LocaleContext = createContext({
-  localeProvider: undefined,
-  t: undefined
-})
+  locale: undefined,
+  changeLocale: undefined
+});
 
-export const LocaleContextProvider = props => {
-  const [locale, setLocaleState] = useState(I18n.locale)
+export const LocaleContextProvider = ({ children }) => {
+  const [locale, setLocaleState] = useState(localStorage.getItem("lang") || I18n.locale);
 
-  const changeLocale = newLocale => {
-    setLocaleState(newLocale)
-    setLocale(newLocale)
-  }
+  useEffect(() => {
+    I18n.locale = locale;
+    localStorage.setItem("lang", locale); // Persist language preference
+  }, [locale]);
+
+  const changeLocale = (newLocale) => {
+    setLocaleState(newLocale);
+    
+    let newFontStyle = newLocale === "gu" ? ["'Noto Sans Gujarati'", "sans-serif"].join(",") : newLocale === "hn" ? ["'Noto Sans Devanagari'", "sans-serif"].join(",") : ["'Inter'", "sans-serif"].join(",")
+    console.log(newFontStyle)
+
+    console.log(r)
+
+    r.style.setProperty('--main-font-family', newFontStyle);
+  };
 
   return (
     <LocaleContext.Provider value={{ locale, changeLocale }}>
-      {props.children}
+      {children}
     </LocaleContext.Provider>
-  )
-}
+  );
+};
 
-export default LocaleContext
+export default LocaleContext;

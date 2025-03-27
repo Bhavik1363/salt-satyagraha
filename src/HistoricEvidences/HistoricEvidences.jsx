@@ -16,6 +16,7 @@ import image7 from '../images/history/image7.png'
 import image8 from '../images/history/image8.png'
 import image9 from '../images/history/image9.png'
 import image10 from '../images/history/image10.png'
+import { t } from 'i18n-js';
 
 const imageObj = {
   img1: image1,
@@ -64,7 +65,7 @@ export default function HistoricEvidences() {
               textAlign: 'left'
             }}
           >
-            Historical Evidence
+            {t("Historical_Evidence")}
           </Typography>
         </Grid>
         <Grid

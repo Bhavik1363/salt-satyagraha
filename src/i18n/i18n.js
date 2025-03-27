@@ -12,4 +12,8 @@ I18n.translations = {
 I18n.fallbacks = true;
 I18n.locale = localStorage.getItem("lang") || "en"; // Persist language
 
+export const setLocale = (locale) => {
+  I18n.locale = locale;
+};
+
 export default I18n;

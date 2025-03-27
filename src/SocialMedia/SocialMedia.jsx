@@ -9,6 +9,7 @@ import fbQRImg from '../images/social-media/facebookQR.svg'
 import instaQRImg from '../images/social-media/insta_qrcode.png'
 import xQRImg from '../images/social-media/xQR.svg'
 import { LinkButton } from '../StyledMaterialComponents'
+import { t } from 'i18n-js';
 
 export default function SocialMedia() {
   return (
@@ -35,7 +36,7 @@ export default function SocialMedia() {
               textAlign: 'left'
             }}
           >
-            {'Satyagrah Smruti Trust'}
+            {t("Satyagrah_Smruti_Trust")}
           </Typography>
 
           <LinkButton onClick={() => (window.location.href = '/')}>

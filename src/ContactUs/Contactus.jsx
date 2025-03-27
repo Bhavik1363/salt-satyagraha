@@ -25,6 +25,7 @@ import slider4Img from '../images/nearby places/04.jpg'
 import slider5Img from '../images/nearby places/05.jpg'
 import axios from 'axios'
 import baseUrls from '../base-urls'
+import { t } from 'i18n-js';
 
 const settings = {
   dots: false,
@@ -138,7 +139,7 @@ export default function Contactus() {
               textAlign: 'left'
             }}
           >
-            {'Contact us'}
+            {t('Contact_US')}
           </Typography>
 
           <LinkButton onClick={() => (window.location.href = '/')}>
@@ -191,12 +192,12 @@ export default function Contactus() {
                             textAlign: 'left'
                           }}
                         >
-                          {'For any constructive project/ programs kindly contact'}
+                          {t('For_any_constructive_project/_programs_kindly_contact')}
                         </Typography>
                       </Grid>
                       <Grid item xs={12} md={12} lg={12}>
                         <RedditTextField
-                          label='Name'
+                          label={t('Name')}
                           id='reddit-input'
                           variant='filled'
                           type='text'
@@ -209,7 +210,7 @@ export default function Contactus() {
 
                       <Grid item xs={12} md={12} lg={12}>
                         <RedditTextField
-                          label='Email'
+                          label={t('Email')}
                           id='reddit-input'
                           variant='filled'
                           type='email'
@@ -222,7 +223,7 @@ export default function Contactus() {
 
                       <Grid item xs={12} md={12} lg={12}>
                         <RedditTextField
-                          label='Mobile Number'
+                          label={t('Mobile_Number')}
                           id='reddit-input'
                           variant='filled'
                           type='number'
@@ -235,7 +236,7 @@ export default function Contactus() {
 
                       <Grid item xs={12} md={12} lg={12}>
                         <RedditTextField
-                          label='Message'
+                          label={t('Message')}
                           id='reddit-input'
                           variant='filled'
                           type='text'
@@ -250,7 +251,7 @@ export default function Contactus() {
 
                       <Grid item xs={12} md={12} lg={12}>
                         <FilledButton onClick={handleSubmitData}>
-                          Send
+                          {t('Send')}
                         </FilledButton>
                       </Grid>
                     </Grid>
@@ -263,23 +264,23 @@ export default function Contactus() {
                   <Slider {...settings}>
                     <div className='slider-maindiv'>
                       <img src={slider1Img} alt='' />
-                      <h3>Surat Castle</h3>
+                      <h3>{t("Surat_Castle")}</h3>
                     </div>
                     <div className='slider-maindiv'>
                       <img src={slider2Img} alt='' />
-                      <h3>Dumas beach</h3>
+                      <h3>{t("Dumas_beach")}</h3>
                     </div>
                     <div className='slider-maindiv'>
                       <img src={slider3Img} alt='' />
-                      <h3>VR SURAT</h3>
+                      <h3>{t("VR_SURAT")}</h3>
                     </div>
                     <div className='slider-maindiv'>
                       <img src={slider4Img} alt='' />
-                      <h3>Tapi Riverfront</h3>
+                      <h3>{t("Tapi_Riverfront")}</h3>
                     </div>
                     <div className='slider-maindiv'>
                       <img src={slider5Img} alt='' />
-                      <h3>Gopi Talav</h3>
+                      <h3>{t("Gopi_Talav")}</h3>
                     </div>
                   </Slider>
                 </div>
@@ -307,23 +308,23 @@ export default function Contactus() {
                   <Slider {...settings}>
                     <div className='slider-maindiv'>
                       <img src={slider1Img} alt='' />
-                      <h3>Hotel Executive</h3>
+                      <h3>{t("Hotel_Executive")}</h3>
                     </div>
                     <div className='slider-maindiv'>
                       <img src={slider2Img} alt='' />
-                      <h3>Luxurious Studio Apartment at Rajhans Belliza</h3>
+                      <h3>{t("Luxurious_Studio_Apartment_at_Rajhans_Belliza")}</h3>
                     </div>
                     <div className='slider-maindiv'>
                       <img src={slider3Img} alt='' />
-                      <h3>Hotel Royal Accord</h3>
+                      <h3>{t("Hotel_Royal_Accord")}</h3>
                     </div>
                     <div className='slider-maindiv'>
                       <img src={slider4Img} alt='' />
-                      <h3>Weekend Address</h3>
+                      <h3>{t("Weekend_Address")}</h3>
                     </div>
                     <div className='slider-maindiv'>
                       <img src={slider5Img} alt='' />
-                      <h3>Rajhans Belliza Luxurious Homes</h3>
+                      <h3>{t("Rajhans_Belliza_Luxurious_Homes")}</h3>
                     </div>
                   </Slider>
                 </div>
@@ -342,9 +343,9 @@ export default function Contactus() {
                   centered
                   sx={{ justifyContent: 'space-evenly' }}
                 >
-                  <StyledTab label='Contact us' value='1' />
-                  <StyledTab label='Near by places' value='2' />
-                  <StyledTab label='How to reach' value='3' />
+                  <StyledTab label={t("Contact_US")} value='1' />
+                  <StyledTab label={t("Near_by_places")} value='2' />
+                  <StyledTab label={t("How_to_reach")} value='3' />
                   {/* <StyledTab label='Accomodation' value='4' /> */}
                 </StyledTabs>
               </Box>

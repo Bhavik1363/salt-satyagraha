@@ -18,7 +18,7 @@ import $ from 'jquery';
 import { t } from 'i18n-js';
 import LocaleContext from '../i18n/LocaleContext';
 import { Box, FormControl, Grid, IconButton, Menu, MenuItem, Select, Typography } from '@mui/material'
-import { ExpandMore, Translate } from '@mui/icons-material'
+import { Language } from '@mui/icons-material'
 // import { I18n } from 'i18n-js'
 
 export default function Homepage() {
@@ -84,7 +84,7 @@ export default function Homepage() {
         }}
       >
         <IconButton onClick={(event) => setAnchorEl(event.currentTarget)}>
-          <Translate />
+          <Language />
         </IconButton>
 
         <Menu
@@ -100,7 +100,7 @@ export default function Homepage() {
           {[
             { code: "en", label: t("english") },
             { code: "gu", label: t("gujarati") },
-            { code: "hn", label: t("hindi") },
+            // { code: "hn", label: t("hindi") },
           ].map(({ code, label }) => (
             <MenuItem
               key={code}
@@ -240,42 +240,42 @@ export default function Homepage() {
               <li onClick={() => (window.location.href = '/salt-satyagrah')}>
                 <a className='spiritual' href='/salt-satyagrah'>
                   <img src={saltSatyagrahImg} alt='' />
-                  <span>Salt Satyagrah</span>
+                  <span>{t('salt_satyagrah')}</span>
                 </a>
               </li>
 
               <li onClick={() => (window.location.href = '/satyagrah-smruti-trust')}>
                 <a className='occupational' href='/satyagrah-smruti-trust'>
                   <img src={satyagrahTrustImg} alt='' />
-                  <span>Satyagrah Smruti Trust</span>
+                  <span>{t('satyagrah_smruti_trust')}</span>
                 </a>
               </li>
 
               <li onClick={() => (window.location.href = '/contact-us')}>
                 <a className='emotional' href='/contact-us'>
                   <img src={contactUsImg} alt='' />
-                  <span>Contact Us</span>
+                  <span>{t('contact_us')}</span>
                 </a>
               </li>
 
               <li onClick={() => (window.location.href = '/social-media')}>
                 <a className='environmental' href='/social-media'>
                   <img src={SocialMediaImg} alt='' />
-                  <span>Social Media</span>
+                  <span>{t('social_media')}</span>
                 </a>
               </li>
 
               <li onClick={() => (window.location.href = '/historic-evidences')}>
                 <a className='intellectual' href='/historic-evidences'>
                   <img src={HistoricalImg} alt='' />
-                  <span>Historical Evidences</span>
+                  <span>{t('historical_evidences')}</span>
                 </a>
               </li>
 
               <li onClick={() => (window.location.href = '/facility-and-attraction')}>
                 <a className='social' href='/facility-and-attraction'>
                   <img src={FacilitiesImg} alt='' />
-                  <span>Facilities & Attractions</span>
+                  <span>{t('facilities_attractions')}</span>
                 </a>
               </li>
             </ul>

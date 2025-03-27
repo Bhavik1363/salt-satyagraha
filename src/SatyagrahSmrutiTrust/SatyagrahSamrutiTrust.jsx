@@ -10,6 +10,7 @@ import GandhiBapuImg from '../images/Gandhi3.png'
 import trusteeImg from '../images/trustee.png'
 import spoonImg from '../images/Spoon.png'
 import './trust.css'
+import { t } from 'i18n-js'
 
 export default function SatyagrahSamrutiTrust() {
   const [value, setValue] = useState('1')
@@ -41,7 +42,7 @@ export default function SatyagrahSamrutiTrust() {
               textAlign: 'left'
             }}
           >
-            {'Satyagrah Smruti Trust'}
+            {t("Satyagrah_Smruti_Trust")}
           </Typography>
 
           <LinkButton onClick={() => (window.location.href = '/')}>
@@ -87,12 +88,7 @@ export default function SatyagrahSamrutiTrust() {
                         marginY: 1
                       }}
                     >
-                      In 1990s, through the immense efforts of Shri Bipinbhai
-                      Dhirajlal Desai and Shri Gunvantbhai Ishvarlal Desai of
-                      Maitri Trust, the government of late shri Chimanbhai Patel
-                      had allocated five hectares of land in Bhimrad surrounding
-                      the current development site for highlighting the history
-                      and importance of Bhimrad and nearby villagers during the salt satyagrah.
+                      {t("para16")}
                     </Typography>
                     <Typography
                       variant='h6'
@@ -102,9 +98,7 @@ export default function SatyagrahSamrutiTrust() {
                         marginY: 1
                       }}
                     >
-                      Multiple resolutions of the trust were also passed to this
-                      effect and certain amount had to be submitted to the
-                      government for giving effect of the same.
+                      {t("para17")}
                     </Typography>
                     <Typography
                       variant='h6'
@@ -114,9 +108,7 @@ export default function SatyagrahSamrutiTrust() {
                         marginY: 1
                       }}
                     >
-                      Maitri Trust pledged roughly 15% of the required funds but
-                      unfortunately the remaining funds could not be arranged
-                      and the idea was lost to the pages of history.
+                      {t("para18")}
                     </Typography>
                   </Grid>
 
@@ -150,11 +142,7 @@ export default function SatyagrahSamrutiTrust() {
                         marginY: 1
                       }}
                     >
-                      In 2016, Shri Balwantbhai L. Patel, former Sarpanch of
-                      Bhimrad and former corporator of Surat Municipal
-                      Corporation, stumbled upon the facts and history of the
-                      magnificence of the village and decided to take up the
-                      issue again.
+                      {t("para19")}
                     </Typography>
                     <Typography
                       variant='h6'
@@ -164,10 +152,7 @@ export default function SatyagrahSamrutiTrust() {
                         marginY: 1
                       }}
                     >
-                      He singlehandedly began a struggle for recognition of
-                      Bhimrad that many had assumed to be a lost cause and
-                      through tremendous efforts and perseverance brought it to
-                      a fruitful conclusion.
+                      {t("para20")}
                     </Typography>
                     <Typography
                       variant='h6'
@@ -177,10 +162,7 @@ export default function SatyagrahSamrutiTrust() {
                         marginY: 1
                       }}
                     >
-                      He roped in the assistance of Shri Yogesh Patel and Shri
-                      Anil Patel to further research the historical significance
-                      and Shri Anilbhai found a treasure trove of newspapers
-                      from 1930 all highlighting Bhimrad village.
+                      {t("para21")}
                     </Typography>
 
                     <Typography
@@ -191,10 +173,7 @@ export default function SatyagrahSamrutiTrust() {
                         marginY: 1
                       }}
                     >
-                      Together they reached out to the descendants and family of
-                      Shri Bipinbhai Desai and Shri Gunvantbhai Desai, namely,
-                      Shri Parimal Gunvantrai Desai and Shri Hardik Parimal
-                      Desai with their findings.
+                      {t("para22")}
                     </Typography>
                     <Typography
                       variant='h6'
@@ -204,11 +183,7 @@ export default function SatyagrahSamrutiTrust() {
                         marginY: 1
                       }}
                     >
-                      Shri Parimalbhai and Shri Hardikbhai found out the
-                      resolutions passed in 1990 acknowledging the allotment of
-                      land by the then government for this historical purpose,
-                      and even helped by bringing more Gandhi Family members in
-                      active participation of this struggle for recognition.
+                      {t("para23")}
                     </Typography>
                     <Typography
                       variant='h6'
@@ -218,10 +193,7 @@ export default function SatyagrahSamrutiTrust() {
                         marginY: 1
                       }}
                     >
-                      Gandhi, then 61 years old, was accompanied by 78 trusted
-                      volunteers. The choice of such an action was strategic,
-                      aiming to engage a broad spectrum of the Indian population
-                      in direct, nonviolent resistance.
+                      {t("para24")}
                     </Typography>
 
                     <Typography
@@ -232,12 +204,7 @@ export default function SatyagrahSamrutiTrust() {
                         marginY: 1
                       }}
                     >
-                      Namely, Shri Nilamben Parikh, Shri Kanu Gandhi and Shri
-                      Schiva Gandhi were made aware of this struggle for
-                      recognition and who played a very important role in
-                      raising public awareness through their presence and
-                      speeches held at various events in Bhimrad by the Bhimrad
-                      Yuva Trust.
+                      {t("para25")}
                     </Typography>
                     <Typography
                       variant='h6'
@@ -247,15 +214,7 @@ export default function SatyagrahSamrutiTrust() {
                         marginY: 1
                       }}
                     >
-                      Finally, the government of Gujarat, through its Tourism
-                      Ministry under the then Tourism Minister Shri Purneshbhai
-                      Modi, sanctioned Tourism Corporation of Gujarat Limited to
-                      develop the historic sight at a cost of INR 13 Crores on
-                      10,000 Sq. Mtrs land and handover its management and
-                      functioning to Satyagrah Smruti Trust, formed by Shri
-                      Balwantbhai Patel (President) and Shri Parimalbhai Desai
-                      (Vice-President) along with 38 other trustees for this
-                      specific purpose.
+                      {t("para26")}
                     </Typography>
                     <Typography
                       variant='h6'
@@ -265,9 +224,7 @@ export default function SatyagrahSamrutiTrust() {
                         marginY: 1
                       }}
                     >
-                      The project will have a meeting hall, a museum, a prayer
-                      hall, a library, an exhibition hall, a research center and
-                      a vocation training center.
+                      {t("para27")}
                     </Typography>
                     <Typography
                       variant='h6'
@@ -277,10 +234,7 @@ export default function SatyagrahSamrutiTrust() {
                         marginY: 1
                       }}
                     >
-                      Both the Salt Satyagrah as well as the Struggle for
-                      Recognition of Bhimrad for its role in the Salt Satyagrah,
-                      act as a source of great inspiration for the younger
-                      generations.
+                      {t("para28")}
                     </Typography>
                     <Typography
                       variant='h6'
@@ -290,13 +244,7 @@ export default function SatyagrahSamrutiTrust() {
                         marginY: 1
                       }}
                     >
-                      In the first meeting of the trust, all the trustees
-                      unanimously acknowledged the tireless efforts of Shri
-                      Balwantbhai Patel, who at times single handedly ran the
-                      struggle but never gave up on his mission to develop
-                      Bhimrad, and especially the location of the historic
-                      events, in the image of the revered and beloved ‘Bapu’
-                      Mahatma Gandhiji.
+                      {t("para29")}
                     </Typography>
                   </Grid>
 
@@ -386,9 +334,9 @@ export default function SatyagrahSamrutiTrust() {
                   centered
                   sx={{ justifyContent: 'space-evenly' }}
                 >
-                  <StyledTab label='Backdrop' value='1' />
-                  <StyledTab label='Struggle for Recognition' value='2' />
-                  <StyledTab label='Trust Deed &amp; Trustees' value='3' />
+                  <StyledTab label={t("Backdrop")} value='1' />
+                  <StyledTab label={t("Struggle_for_Recognition")} value='2' />
+                  <StyledTab label={t("Trust_Deed_Trustees")} value='3' />
                 </StyledTabs>
               </Box>
             </TabContext>

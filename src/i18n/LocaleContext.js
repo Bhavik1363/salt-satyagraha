@@ -1,9 +1,11 @@
 import React, { createContext, useState, useEffect } from 'react';
-import I18n from './i18n';
+import I18n, { setLocale } from './i18n';
 
 let r = document.documentElement;
 
 export const LocaleContext = createContext({
+  localeProvider: undefined,
+  t: undefined,
   locale: undefined,
   changeLocale: undefined
 });
@@ -18,14 +20,10 @@ export const LocaleContextProvider = ({ children }) => {
 
   const changeLocale = (newLocale) => {
     setLocaleState(newLocale);
-    
+    setLocale(newLocale)
     let newFontStyle = newLocale === "gu" ? ["'Noto Sans Gujarati'", "sans-serif"].join(",") : newLocale === "hn" ? ["'Noto Sans Devanagari'", "sans-serif"].join(",") : ["'Inter'", "sans-serif"].join(",")
-    console.log(newFontStyle)
-
-    console.log(r)
-
     r.style.setProperty('--main-font-family', newFontStyle);
-  };
+  }
 
   return (
     <LocaleContext.Provider value={{ locale, changeLocale }}>

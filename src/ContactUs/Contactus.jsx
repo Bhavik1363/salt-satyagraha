@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { useEffect, useState } from 'react'
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Grid, IconButton, Typography } from '@mui/material'
 import {
   FilledButton,
   LinkButton,
@@ -12,6 +12,8 @@ import TabContext from '@mui/lab/TabContext'
 import TabPanel from '@mui/lab/TabPanel'
 import { isMobile } from 'react-device-detect'
 import Slider from 'react-slick';
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 import sst_location from '../images/location/sst_location.webp';
 
 import bhimradImg from '../images/bhimrad.png'
@@ -23,20 +25,92 @@ import slider2Img from '../images/nearby places/02.jpg'
 import slider3Img from '../images/nearby places/03.jpg'
 import slider4Img from '../images/nearby places/04.jpg'
 import slider5Img from '../images/nearby places/05.jpg'
+import slider6Img from '../images/nearby places/06.jpg'
+import slider7Img from '../images/nearby places/07.jpg'
+import slider8Img from '../images/nearby places/08.jpg'
+import slider9Img from '../images/nearby places/09.jpg'
 import axios from 'axios'
 import baseUrls from '../base-urls'
 import { t } from 'i18n-js';
+import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material'
+
+const imageObj = {
+  img1: slider1Img,
+  img2: slider2Img,
+  img3: slider3Img,
+  img4: slider4Img,
+  img5: slider5Img,
+  img6: slider6Img,
+  img7: slider7Img,
+  img8: slider8Img,
+  img9: slider9Img
+}
+
+const NextButton = (props) => {
+  return (
+    <IconButton onClick={props.onClick}>
+      <ArrowForwardIos />
+    </IconButton>
+  )
+}
+
+const PrevButton = (props) => {
+  return (
+    <IconButton onClick={props.onClick}>
+      <ArrowBackIos />
+    </IconButton>
+  )
+}
 
 const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
+  customPaging: function (i) {
+    return (
+      <div className='customarrow'>
+        <img src={imageObj[`img${i + 1}`]} alt='' />
+      </div>
+    )
+  },
+  pauseOnHover: true,
+  pauseOnFocus: true,
+  pauseOnDotsHover: true,
+  arrows: true,
+  dots: true,
+  infinite: false,
   slidesToShow: 3,
   slidesToScroll: 1,
   autoplay: true,
-  speed: 3000,
-  autoplaySpeed: 3000,
-  cssEase: 'linear'
+  speed: 500,
+  // nextArrow: <NextButton />,
+  // prevArrow: <PrevButton />,
+  // autoplaySpeed: 3000,
+  cssEase: 'linear',
+  initialSlide: 0,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 }
 
 export default function Contactus() {
@@ -281,6 +355,26 @@ export default function Contactus() {
                     <div className='slider-maindiv'>
                       <img src={slider5Img} alt='' />
                       <h3>{t("Gopi_Talav")}</h3>
+                    </div>
+                    <div className='slider-maindiv'>
+                      <img src={slider6Img} alt='' />
+                      <h3>{t("Dream_city")}</h3>
+                    </div>
+                    <div className='slider-maindiv'>
+                      <img src={slider7Img} alt='' />
+                      <h3>{t("Suvali_beach")}</h3>
+                    </div>
+                    <div className='slider-maindiv'>
+                      <img src={slider8Img} alt='' />
+                      <h3>{t("Revolving_Restaurant")}</h3>
+                    </div>
+                    <div className='slider-maindiv'>
+                      <img src={slider9Img} alt='' />
+                      <h3>{t("Textile_Market")}</h3>
+                    </div>
+                    <div className='slider-maindiv'>
+                      <img src={slider9Img} alt='' />
+                      <h3>{t("Textile_Market")}</h3>
                     </div>
                   </Slider>
                 </div>

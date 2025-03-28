@@ -12,7 +12,7 @@ import wholeBGImg from '../images/Whole BG.png'
 import logoImg from '../images/Logo (English).png'
 import talkbotImg from '../images/Talkbot.svg'
 
-import { isMobile } from 'react-device-detect'
+import { isMobileOnly, isTablet } from 'react-device-detect'
 
 import $ from 'jquery';
 import { t } from 'i18n-js';
@@ -233,7 +233,7 @@ export default function Homepage() {
         </Select>
       </Box> */}
 
-      {isMobile ? (
+      {(isMobileOnly) ? (
         <div className='circle-container'>
           <div className='circle-menu'>
             <ul>

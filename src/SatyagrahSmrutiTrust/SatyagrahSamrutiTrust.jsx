@@ -4,7 +4,7 @@ import { Box, Grid, Typography } from '@mui/material'
 import TabContext from '@mui/lab/TabContext'
 import TabPanel from '@mui/lab/TabPanel'
 import { LinkButton, StyledTab, StyledTabs } from '../StyledMaterialComponents'
-import { isMobile } from 'react-device-detect'
+import { isMobile, isMobileOnly } from 'react-device-detect'
 
 import GandhiBapuImg from '../images/Gandhi3.png'
 import trusteeImg from '../images/trustee.png'
@@ -61,7 +61,7 @@ export default function SatyagrahSamrutiTrust() {
                     md={6}
                     lg={6}
                     sx={{
-                      height: '77vh',
+                      height: isMobileOnly ? '35vh' : '77vh',
                       overflowY: 'auto',
                       // scrollSnapType: 'y mandatory',
                       '::-webkit-scrollbar': {
@@ -112,7 +112,7 @@ export default function SatyagrahSamrutiTrust() {
                     </Typography>
                   </Grid>
 
-                  <Grid item xs={12} md={6} lg={6} sx={{ height: '75vh' }}>
+                  <Grid item xs={12} md={6} lg={6} sx={{ height: isMobileOnly ? '35vh' : '75vh' }}>
                     <img src={spoonImg} alt='' className='sideimg' />
                   </Grid>
                 </Grid>
@@ -126,7 +126,7 @@ export default function SatyagrahSamrutiTrust() {
                     md={6}
                     lg={6}
                     sx={{
-                      height: '77vh',
+                      height: isMobileOnly ? '35vh' : '77vh',
                       overflowY: 'auto',
                       // scrollSnapType: 'y mandatory',
                       '::-webkit-scrollbar': {
@@ -249,7 +249,7 @@ export default function SatyagrahSamrutiTrust() {
                     </Typography>
                   </Grid>
 
-                  <Grid item xs={12} md={6} lg={6} sx={{ height: '75vh' }}>
+                  <Grid item xs={12} md={6} lg={6} sx={{ height: isMobileOnly ? '35vh' : '75vh' }}>
                     <img src={GandhiBapuImg} alt='' className='sideimg' />
                   </Grid>
                 </Grid>
@@ -324,8 +324,8 @@ export default function SatyagrahSamrutiTrust() {
 
               <Box
                 sx={{
-                  position: isMobile ? 'fixed' : 'absolute',
-                  bottom: isMobile ? 0 : 8,
+                  position: isMobileOnly ? 'fixed' : 'absolute',
+                  bottom: isMobileOnly ? 0 : 8,
                   width: '100%',
                   background: '#ffffff'
                 }}

@@ -10,7 +10,7 @@ import {
 } from '../StyledMaterialComponents'
 import TabContext from '@mui/lab/TabContext'
 import TabPanel from '@mui/lab/TabPanel'
-import { isMobile } from 'react-device-detect'
+import { isMobile, isMobileOnly } from 'react-device-detect'
 import Slider from 'react-slick';
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
@@ -426,8 +426,8 @@ export default function Contactus() {
 
               <Box
                 sx={{
-                  position: isMobile ? 'fixed' : 'absolute',
-                  bottom: isMobile ? 0 : 8,
+                  position: isMobileOnly ? 'fixed' : 'absolute',
+                  bottom: isMobileOnly ? 0 : 8,
                   width: '100%',
                   background: '#ffffff'
                 }}

@@ -43,3 +43,9 @@
       transform: translateX(-100%);
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .rail li span {
+      font-size: 17px;
+    }
+  }

@@ -3,7 +3,7 @@ import { Box, Grid, Typography } from '@mui/material'
 import TabContext from '@mui/lab/TabContext'
 import TabPanel from '@mui/lab/TabPanel'
 import { LinkButton, StyledTab, StyledTabs } from '../StyledMaterialComponents'
-import { isMobile } from 'react-device-detect'
+import { isMobileOnly } from 'react-device-detect'
 
 import galleryImg from '../images/Gallery.png'
 import sabhagruhImg from '../images/Sabhagruh.png'
@@ -11,7 +11,7 @@ import auditoriumImg from '../images/Auditorium.png'
 import technologyCenterImg from '../images/5G center.png'
 import { t } from 'i18n-js'
 
-export default function FacilitiesandAttraction () {
+export default function FacilitiesandAttraction() {
   const [value, setValue] = useState('1')
 
   const handleChange = (event, newValue) => {
@@ -59,7 +59,7 @@ export default function FacilitiesandAttraction () {
                     xs={12}
                     md={6}
                     lg={6}
-                    sx={{ height: !isMobile ? '75vh' : 'auto' }}
+                    sx={{ height: !isMobileOnly ? '75vh' : 'auto' }}
                   >
                     <img src={galleryImg} alt='' className='sideimg' />
                   </Grid>
@@ -70,7 +70,7 @@ export default function FacilitiesandAttraction () {
                     md={6}
                     lg={6}
                     sx={{
-                      height: !isMobile ? '77vh' : '40vh',
+                      height: !isMobileOnly ? '77vh' : '40vh',
                       overflowY: 'auto',
                       // scrollSnapType: 'y mandatory',
                       '::-webkit-scrollbar': {
@@ -141,7 +141,7 @@ export default function FacilitiesandAttraction () {
                     md={6}
                     lg={6}
                     sx={{
-                      height: !isMobile ? '77vh' : '40vh',
+                      height: !isMobileOnly ? '77vh' : '40vh',
                       overflowY: 'auto',
                       // scrollSnapType: 'y mandatory',
                       '::-webkit-scrollbar': {
@@ -197,7 +197,7 @@ export default function FacilitiesandAttraction () {
                     xs={12}
                     md={6}
                     lg={6}
-                    sx={{ height: !isMobile ? '75vh' : 'auto' }}
+                    sx={{ height: !isMobileOnly ? '75vh' : 'auto' }}
                   >
                     <img src={sabhagruhImg} alt='' className='sideimg' />
                   </Grid>
@@ -212,7 +212,7 @@ export default function FacilitiesandAttraction () {
                     xs={12}
                     md={6}
                     lg={6}
-                    sx={{ height: !isMobile ? '75vh' : 'auto' }}
+                    sx={{ height: !isMobileOnly ? '75vh' : 'auto' }}
                   >
                     <img src={auditoriumImg} alt='' className='sideimg' />
                   </Grid>
@@ -223,7 +223,7 @@ export default function FacilitiesandAttraction () {
                     md={6}
                     lg={6}
                     sx={{
-                      height: !isMobile ? '77vh' : '40vh',
+                      height: !isMobileOnly ? '77vh' : '40vh',
                       overflowY: 'auto',
                       // scrollSnapType: 'y mandatory',
                       '::-webkit-scrollbar': {
@@ -274,7 +274,7 @@ export default function FacilitiesandAttraction () {
                     md={6}
                     lg={6}
                     sx={{
-                      height: !isMobile ? '77vh' : '40vh',
+                      height: !isMobileOnly ? '77vh' : '40vh',
                       overflowY: 'auto',
                       // scrollSnapType: 'y mandatory',
                       '::-webkit-scrollbar': {
@@ -329,7 +329,7 @@ export default function FacilitiesandAttraction () {
                     xs={12}
                     md={6}
                     lg={6}
-                    sx={{ height: !isMobile ? '75vh' : 'auto' }}
+                    sx={{ height: !isMobileOnly ? '75vh' : 'auto' }}
                   >
                     <img src={technologyCenterImg} alt='' className='sideimg' />
                   </Grid>
@@ -338,8 +338,8 @@ export default function FacilitiesandAttraction () {
 
               <Box
                 sx={{
-                  position: isMobile ? 'fixed' : 'absolute',
-                  bottom: isMobile ? 0 : 8,
+                  position: isMobileOnly ? 'fixed' : 'absolute',
+                  bottom: isMobileOnly ? 0 : 8,
                   width: '100%',
                   background: '#ffffff'
                 }}

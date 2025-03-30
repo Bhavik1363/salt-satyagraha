@@ -36,7 +36,7 @@ export default function SatyagrahSamrutiTrust() {
           alignItems={'center'}
         >
           <Typography
-            variant='h3'
+            variant='h4'
             sx={{
               fontFamily: "var(--main-font-family)",
               textAlign: 'left'
@@ -333,6 +333,7 @@ export default function SatyagrahSamrutiTrust() {
                 <StyledTabs
                   onChange={handleChange}
                   centered
+                  variant={isMobileOnly && "fullWidth"}
                   sx={{ justifyContent: 'space-evenly' }}
                 >
                   <StyledTab label={t("Backdrop")} value='1' />

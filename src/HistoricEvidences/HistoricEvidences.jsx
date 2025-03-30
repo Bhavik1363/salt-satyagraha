@@ -58,7 +58,7 @@ export default function HistoricEvidences() {
       <Grid container spacing={1} margin={0} width={'100%'}>
         <Grid item xs={6} md={6} lg={6}>
           <Typography
-            variant='h3'
+            variant='h4'
             sx={{
               fontFamily: "var(--main-font-family)",
               fontWeight: 600,

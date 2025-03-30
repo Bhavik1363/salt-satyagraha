@@ -10,6 +10,7 @@ import instaQRImg from '../images/social-media/insta_qrcode.png'
 import xQRImg from '../images/social-media/xQR.svg'
 import { LinkButton } from '../StyledMaterialComponents'
 import { t } from 'i18n-js';
+import { isMobileOnly } from 'react-device-detect'
 
 export default function SocialMedia() {
   return (
@@ -30,7 +31,7 @@ export default function SocialMedia() {
           alignItems={'center'}
         >
           <Typography
-            variant='h3'
+            variant='h4'
             sx={{
               fontFamily: "var(--main-font-family)",
               textAlign: 'left'
@@ -50,21 +51,17 @@ export default function SocialMedia() {
           md={12}
           lg={12}
           display={'flex'}
-          justifyContent={'center'}
-          alignItems={'center'}
+          justifyContent={'flex-start'}
+          alignItems={'flex-start'}
           height={'55vh'}
         >
           <ul className='social-container'>
             <li>
-              <img src={fbQRImg} alt='' />
+              <img src={fbQRImg} alt='' style={isMobileOnly && {width: "150px"}} />
               <span style={{cursor: 'pointer'}} onClick={() => window.open('https://www.facebook.com/profile.php?id=61559225883216', 'blank')}>Facebook</span>
             </li>
-            {/* <li>
-              <img src={instaQRImg} alt='' />
-              <span>Instagram</span>
-            </li> */}
             <li>
-              <img src={xQRImg} alt='' />
+              <img src={xQRImg} alt='' style={isMobileOnly && {width: "150px"}} />
               <span style={{cursor: 'pointer'}} onClick={() => window.open('https://x.com/sstbhimrad', 'blank')}>X (Twitter)</span>
             </li>
           </ul>

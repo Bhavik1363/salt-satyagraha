@@ -161,7 +161,7 @@ export default function GandhiBot() {
           alignItems={'center'}
         >
           <Typography
-            variant='h3'
+            variant='h4'
             sx={{
               fontFamily: "var(--main-font-family)",
               textAlign: 'left'

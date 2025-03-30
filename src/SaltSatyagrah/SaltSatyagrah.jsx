@@ -27,7 +27,7 @@ export default function SaltSatyagrah() {
             <Grid container spacing={1}>
               <Grid item xs={6} md={6} lg={6}>
                 <Typography
-                  variant='h3'
+                  variant='h4'
                   sx={{
                     fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
@@ -51,7 +51,7 @@ export default function SaltSatyagrah() {
                   Back
                 </LinkButton>
               </Grid>
-              <Grid item xs={12} md={6} lg={6} sx={{ height: (isMobileOnly || isTablet) ? '40vh' : '75vh' }}>
+              <Grid item xs={12} md={6} lg={6} sx={{ height: (isMobileOnly || isTablet) ? '35vh' : '75vh' }}>
                 <img src={GandhiBapuImg} alt='' className='sideimg' />
               </Grid>
               <Grid
@@ -60,7 +60,7 @@ export default function SaltSatyagrah() {
                 md={6}
                 lg={6}
                 sx={{
-                  height: (isMobileOnly || isTablet) ? '40vh' : '77vh',
+                  height: (isMobileOnly || isTablet) ? '25vh' : '77vh',
                   overflowY: 'auto',
                   // scrollSnapType: 'y mandatory',
                   '::-webkit-scrollbar': {
@@ -116,7 +116,7 @@ export default function SaltSatyagrah() {
             <Grid container spacing={1}>
               <Grid item xs={6} md={6} lg={6}>
                 <Typography
-                  variant='h3'
+                  variant='h4'
                   sx={{
                     fontFamily: "var(--main-font-family)",
                     textAlign: 'left'
@@ -139,7 +139,7 @@ export default function SaltSatyagrah() {
                   Back
                 </LinkButton>
               </Grid>
-              <Grid item xs={12} md={6} lg={6} sx={{ height: (isMobileOnly || isTablet) ? '40vh' : '75vh' }}>
+              <Grid item xs={12} md={6} lg={6} sx={{ height: (isMobileOnly || isTablet) ? '35vh' : '75vh' }}>
                 <img src={GandhiBapu2Img} alt='' className='sideimg' />
               </Grid>
 
@@ -149,7 +149,7 @@ export default function SaltSatyagrah() {
                 md={6}
                 lg={6}
                 sx={{
-                  height: (isMobileOnly || isTablet) ? '40vh' : '77vh',
+                  height: (isMobileOnly || isTablet) ? '25vh' : '77vh',
                   overflowY: 'auto',
                   // scrollSnapType: 'y mandatory',
                   '::-webkit-scrollbar': {
@@ -303,7 +303,7 @@ export default function SaltSatyagrah() {
             <Grid container spacing={1}>
               <Grid item xs={6} md={6} lg={6}>
                 <Typography
-                  variant='h3'
+                  variant='h4'
                   sx={{
                     fontFamily: "var(--main-font-family)",
                     textAlign: 'left'
@@ -326,7 +326,7 @@ export default function SaltSatyagrah() {
                   Back
                 </LinkButton>
               </Grid>
-              <Grid item xs={12} md={6} lg={6} sx={{ height: (isMobileOnly || isTablet) ? '40vh' : '75vh' }}>
+              <Grid item xs={12} md={6} lg={6} sx={{ height: (isMobileOnly || isTablet) ? '35vh' : '75vh' }}>
                 <img src={GandhiBapu3Img} alt='' className='sideimg' />
               </Grid>
 
@@ -336,7 +336,7 @@ export default function SaltSatyagrah() {
                 md={6}
                 lg={6}
                 sx={{
-                  height: (isMobileOnly || isTablet) ? '40vh' : '77vh',
+                  height: (isMobileOnly || isTablet) ? '25vh' : '77vh',
                   overflowY: 'auto',
                   // scrollSnapType: 'y mandatory',
                   '::-webkit-scrollbar': {
@@ -410,6 +410,7 @@ export default function SaltSatyagrah() {
             <StyledTabs
               onChange={handleChange}
               centered
+              variant={isMobileOnly && "fullWidth"}
               sx={{ justifyContent: 'space-evenly' }}
             >
               <StyledTab label={t("Backdrop")} value='1' />

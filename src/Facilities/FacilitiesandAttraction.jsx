@@ -35,7 +35,7 @@ export default function FacilitiesandAttraction() {
           alignItems={'center'}
         >
           <Typography
-            variant='h3'
+            variant='h4'
             sx={{
               fontFamily: "var(--main-font-family)",
               textAlign: 'left'
@@ -59,7 +59,7 @@ export default function FacilitiesandAttraction() {
                     xs={12}
                     md={6}
                     lg={6}
-                    sx={{ height: !isMobileOnly ? '75vh' : 'auto' }}
+                    sx={{ height: !isMobileOnly ? '75vh' : '35vh' }}
                   >
                     <img src={galleryImg} alt='' className='sideimg' />
                   </Grid>
@@ -70,7 +70,7 @@ export default function FacilitiesandAttraction() {
                     md={6}
                     lg={6}
                     sx={{
-                      height: !isMobileOnly ? '77vh' : '40vh',
+                      height: !isMobileOnly ? '77vh' : '30vh',
                       overflowY: 'auto',
                       // scrollSnapType: 'y mandatory',
                       '::-webkit-scrollbar': {
@@ -141,7 +141,7 @@ export default function FacilitiesandAttraction() {
                     md={6}
                     lg={6}
                     sx={{
-                      height: !isMobileOnly ? '77vh' : '40vh',
+                      height: !isMobileOnly ? '77vh' : '35vh',
                       overflowY: 'auto',
                       // scrollSnapType: 'y mandatory',
                       '::-webkit-scrollbar': {
@@ -197,7 +197,7 @@ export default function FacilitiesandAttraction() {
                     xs={12}
                     md={6}
                     lg={6}
-                    sx={{ height: !isMobileOnly ? '75vh' : 'auto' }}
+                    sx={{ height: !isMobileOnly ? '75vh' : '35vh' }}
                   >
                     <img src={sabhagruhImg} alt='' className='sideimg' />
                   </Grid>
@@ -212,7 +212,7 @@ export default function FacilitiesandAttraction() {
                     xs={12}
                     md={6}
                     lg={6}
-                    sx={{ height: !isMobileOnly ? '75vh' : 'auto' }}
+                    sx={{ height: !isMobileOnly ? '75vh' : '35vh' }}
                   >
                     <img src={auditoriumImg} alt='' className='sideimg' />
                   </Grid>
@@ -223,7 +223,7 @@ export default function FacilitiesandAttraction() {
                     md={6}
                     lg={6}
                     sx={{
-                      height: !isMobileOnly ? '77vh' : '40vh',
+                      height: !isMobileOnly ? '77vh' : '35vh',
                       overflowY: 'auto',
                       // scrollSnapType: 'y mandatory',
                       '::-webkit-scrollbar': {
@@ -274,7 +274,7 @@ export default function FacilitiesandAttraction() {
                     md={6}
                     lg={6}
                     sx={{
-                      height: !isMobileOnly ? '77vh' : '40vh',
+                      height: !isMobileOnly ? '77vh' : '35vh',
                       overflowY: 'auto',
                       // scrollSnapType: 'y mandatory',
                       '::-webkit-scrollbar': {
@@ -329,7 +329,7 @@ export default function FacilitiesandAttraction() {
                     xs={12}
                     md={6}
                     lg={6}
-                    sx={{ height: !isMobileOnly ? '75vh' : 'auto' }}
+                    sx={{ height: !isMobileOnly ? '75vh' : '35vh' }}
                   >
                     <img src={technologyCenterImg} alt='' className='sideimg' />
                   </Grid>
@@ -347,6 +347,7 @@ export default function FacilitiesandAttraction() {
                 <StyledTabs
                   onChange={handleChange}
                   centered
+                  variant={isMobileOnly && "fullWidth"}
                   sx={{ justifyContent: 'space-evenly' }}
                 >
                   <StyledTab label={t("Galleries")} value='1' />

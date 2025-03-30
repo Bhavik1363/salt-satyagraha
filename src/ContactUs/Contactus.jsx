@@ -141,7 +141,7 @@ export default function Contactus() {
           iframe.style.display = 'block';  // Show the map
           placeholder.style.display = 'none'; // Hide placeholder
         };
-      }, 1500);
+      }, 150);
     }
   }, [value])
 
@@ -207,7 +207,7 @@ export default function Contactus() {
           alignItems={'center'}
         >
           <Typography
-            variant='h3'
+            variant='h4'
             sx={{
               fontFamily: "var(--main-font-family)",
               textAlign: 'left'
@@ -226,21 +226,8 @@ export default function Contactus() {
             <TabContext value={value} sx={{ minHeight: 35 }}>
               <TabPanel value='1'>
                 <Grid container spacing={1}>
-                  <Grid
-                    item
-                    xs={12}
-                    md={6}
-                    lg={6}
-                    sx={{
-                      height: '77vh',
-                      overflowY: 'auto',
-                      // scrollSnapType: 'y mandatory',
-                      '::-webkit-scrollbar': {
-                        display: 'none'
-                      }
-                    }}
-                  >
-                    <img src={bhimradImg} alt='' />
+                  <Grid item xs={12} md={6} lg={6} sx={{ height: isMobileOnly ? '35vh' : '75vh' }}>
+                    <img src={bhimradImg} alt='' className='sideimg' />
                   </Grid>
 
                   <Grid
@@ -249,7 +236,7 @@ export default function Contactus() {
                     md={6}
                     lg={6}
                     sx={{
-                      height: '77vh',
+                      height: isMobileOnly ? '35vh' : '77vh',
                       overflowY: 'auto',
                       // scrollSnapType: 'y mandatory',
                       '::-webkit-scrollbar': {
@@ -333,7 +320,7 @@ export default function Contactus() {
                 </Grid>
               </TabPanel>
 
-              <TabPanel value='2' sx={{ height: '70vh' }}>
+              <TabPanel value='2' sx={{ height: '68vh' }}>
                 <div className='slider-container'>
                   <Slider {...settings}>
                     <div className='slider-maindiv'>
@@ -380,19 +367,16 @@ export default function Contactus() {
                 </div>
               </TabPanel>
 
-              <TabPanel value='3' sx={{ height: '70vh' }}>
+              <TabPanel value='3' sx={{ height: '68vh' }}>
                 <div id="map-container" style={{ position: "relative", width: "100%", height: "100%" }}>
                   <img id="map-placeholder"
                     src={sst_location}
                     alt="Google Map Placeholder"
-                    style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0, zIndex: 1 }} />
+                    style={{ width: "100%", height: "100%", objectFit: 'contain', position: "absolute", top: 0, left: 0, zIndex: 1,  }} />
 
                   <iframe
                     id="google-map"
-                    width='100%'
-                    height='100%'
-                    style={{ border: 0, display: "none", height: '100%', width: '100%' }}
-                    loading='lazy'
+                    style={{ border: 0, display: "none", width: '100%', height: "100%" }}
                   ></iframe>
                 </div>
               </TabPanel>
@@ -435,6 +419,7 @@ export default function Contactus() {
                 <StyledTabs
                   onChange={handleChange}
                   centered
+                  variant={isMobileOnly && "fullWidth"}
                   sx={{ justifyContent: 'space-evenly' }}
                 >
                   <StyledTab label={t("Contact_US")} value='1' />

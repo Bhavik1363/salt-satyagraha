@@ -111,38 +111,32 @@ export default function GandhiBot() {
           sessionId: 'abdc1234'
         })
         .then(res => {
+          if (bgsound.current && res.data.response) {
+            bgsound.current.pause(); // Pause the currently playing audio
+            bgsound.current.currentTime = 0; // Reset to start
+          }
           switch (res.data.response) {
             case 'Azad_Hindustan':
-              bgsound.current = new Audio(Azad_Hindustan)
-              bgsound.current.play()
-              bgsound.current.loop = false
-              bgsound.current.volume = 1
-
-              setSpeaking(true)
-              toggleListen()
+              bgsound.current = new Audio(Azad_Hindustan);
               break
 
             case 'audio1':
-              bgsound.current = new Audio(audio1)
-              bgsound.current.play()
-              bgsound.current.loop = false
-              bgsound.current.volume = 1
-              setSpeaking(true)
-              toggleListen()
+              bgsound.current = new Audio(audio1);
               break
 
             case 'audio2':
-              bgsound.current = new Audio(audio2)
-              bgsound.current.play()
-              bgsound.current.loop = false
-              bgsound.current.volume = 1
-              setSpeaking(true)
-              toggleListen()
+              bgsound.current = new Audio(audio2);
               break
 
             default:
               break
           }
+
+          bgsound.current.play()
+          bgsound.current.loop = false
+          bgsound.current.volume = 1
+          setSpeaking(true)
+          toggleListen()
         })
         .catch(err => {
           console.error('getting error while fetching response', err)

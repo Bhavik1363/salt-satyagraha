@@ -165,7 +165,7 @@ export default function SatyagrahSamrutiTrust() {
                       {t("para21")}
                     </Typography>
 
-                    <Typography
+                    {/* <Typography
                       variant='h6'
                       sx={{
                         fontFamily: "var(--main-font-family)",
@@ -174,7 +174,7 @@ export default function SatyagrahSamrutiTrust() {
                       }}
                     >
                       {t("para22")}
-                    </Typography>
+                    </Typography> */}
                     <Typography
                       variant='h6'
                       sx={{
@@ -185,7 +185,7 @@ export default function SatyagrahSamrutiTrust() {
                     >
                       {t("para23")}
                     </Typography>
-                    <Typography
+                    {/* <Typography
                       variant='h6'
                       sx={{
                         fontFamily: "var(--main-font-family)",
@@ -194,7 +194,7 @@ export default function SatyagrahSamrutiTrust() {
                       }}
                     >
                       {t("para24")}
-                    </Typography>
+                    </Typography> */}
 
                     <Typography
                       variant='h6'

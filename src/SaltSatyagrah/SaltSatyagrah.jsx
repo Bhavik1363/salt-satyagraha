@@ -27,11 +27,12 @@ export default function SaltSatyagrah() {
             <Grid container spacing={1}>
               <Grid item xs={6} md={6} lg={6}>
                 <Typography
-                  variant='h4'
+                  variant={isMobileOnly ? 'h6' : 'h4'}
                   sx={{
                     fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
-                    opacity: 0
+                    opacity: 0,
+                    fontWeight: 600,
                   }}
                 >
                   {t("Backdrop")}
@@ -60,7 +61,7 @@ export default function SaltSatyagrah() {
                 md={6}
                 lg={6}
                 sx={{
-                  height: (isMobileOnly || isTablet) ? '25vh' : '77vh',
+                  height: (isMobileOnly || isTablet) ? '35vh' : '77vh',
                   overflowY: 'auto',
                   // scrollSnapType: 'y mandatory',
                   '::-webkit-scrollbar': {
@@ -69,7 +70,7 @@ export default function SaltSatyagrah() {
                 }}
               >
                 <Typography
-                  variant='h4'
+                  variant={isMobileOnly ? 'h6' : 'h4'}
                   sx={{
                     // scrollSnapAlign: 'start',
                     fontWeight: 600,
@@ -80,7 +81,7 @@ export default function SaltSatyagrah() {
                   {t('salt_satyagrah')}
                 </Typography>
                 <Typography
-                  variant='h6'
+                  variant={isMobileOnly ? 'body1' : 'h6'}
                   sx={{
                     fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
@@ -90,7 +91,7 @@ export default function SaltSatyagrah() {
                   {t('the_salt_march_also_known_as_the_dandi_march_was_a_pivotal_event_in_the_indian_independence_movement_against_british_colonial_rule')}
                 </Typography>
                 <Typography
-                  variant='h6'
+                  variant={isMobileOnly ? 'body1' : 'h6'}
                   sx={{
                     fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
@@ -100,7 +101,7 @@ export default function SaltSatyagrah() {
                   {t('orchestrated_by_mohandas_karamchand_gandhi_it_marked_a_significant_escalation_in_the_campaign_of_nonviolent_resistance_and_civil_disobedience_in_india')}
                 </Typography>
                 <Typography
-                  variant='h6'
+                  variant={isMobileOnly ? 'body1' : 'h6'}
                   sx={{
                     fontFamily: "var(--main-font-family)",
                     textAlign: 'left',
@@ -116,10 +117,11 @@ export default function SaltSatyagrah() {
             <Grid container spacing={1}>
               <Grid item xs={6} md={6} lg={6}>
                 <Typography
-                  variant='h4'
+                  variant={isMobileOnly ? 'h6' : 'h4'}
                   sx={{
                     fontFamily: "var(--main-font-family)",
-                    textAlign: 'left'
+                    textAlign: 'left',
+                    fontWeight: 600,
                   }}
                 >
                   {t("salt_satyagrah")}
@@ -158,7 +160,7 @@ export default function SaltSatyagrah() {
                 }}
               >
                 <Typography
-                  variant='h4'
+                  variant={isMobileOnly ? 'h6' : 'h4'}
                   sx={{
                     // scrollSnapAlign: 'start',
                     fontWeight: 600,
@@ -201,7 +203,7 @@ export default function SaltSatyagrah() {
                 </Typography>
 
                 <Typography
-                  variant='h4'
+                  variant={isMobileOnly ? 'h6' : 'h4'}
                   sx={{
                     // scrollSnapAlign: 'start',
                     fontWeight: 600,
@@ -244,7 +246,7 @@ export default function SaltSatyagrah() {
                 </Typography>
 
                 <Typography
-                  variant='h4'
+                  variant={isMobileOnly ? 'h6' : 'h4'}
                   sx={{
                     // scrollSnapAlign: 'start',
                     fontWeight: 600,
@@ -303,10 +305,11 @@ export default function SaltSatyagrah() {
             <Grid container spacing={1}>
               <Grid item xs={6} md={6} lg={6}>
                 <Typography
-                  variant='h4'
+                  variant={isMobileOnly ? 'h6' : 'h4'}
                   sx={{
                     fontFamily: "var(--main-font-family)",
-                    textAlign: 'left'
+                    textAlign: 'left',
+                    fontWeight: 600,
                   }}
                 >
                   {t("Role_of_Bhimrad")}

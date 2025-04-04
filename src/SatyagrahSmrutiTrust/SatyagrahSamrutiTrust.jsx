@@ -36,10 +36,11 @@ export default function SatyagrahSamrutiTrust() {
           alignItems={'center'}
         >
           <Typography
-            variant='h4'
+            variant={isMobileOnly ? 'h6' : 'h4'}
             sx={{
               fontFamily: "var(--main-font-family)",
-              textAlign: 'left'
+              textAlign: 'left',
+              fontWeight: 600
             }}
           >
             {t("Satyagrah_Smruti_Trust")}
@@ -70,7 +71,7 @@ export default function SatyagrahSamrutiTrust() {
                     }}
                   >
                     <Typography
-                      variant='h4'
+                      variant={isMobileOnly ? 'h6' : 'h4'}
                       sx={{
                         // scrollSnapAlign: 'start',
                         fontWeight: 600,
@@ -81,7 +82,7 @@ export default function SatyagrahSamrutiTrust() {
                       {''}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -91,7 +92,7 @@ export default function SatyagrahSamrutiTrust() {
                       {t("para16")}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -101,7 +102,7 @@ export default function SatyagrahSamrutiTrust() {
                       {t("para17")}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -135,7 +136,7 @@ export default function SatyagrahSamrutiTrust() {
                     }}
                   >
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -145,7 +146,7 @@ export default function SatyagrahSamrutiTrust() {
                       {t("para19")}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -155,7 +156,7 @@ export default function SatyagrahSamrutiTrust() {
                       {t("para20")}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -176,7 +177,7 @@ export default function SatyagrahSamrutiTrust() {
                       {t("para22")}
                     </Typography> */}
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -197,7 +198,7 @@ export default function SatyagrahSamrutiTrust() {
                     </Typography> */}
 
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -208,7 +209,7 @@ export default function SatyagrahSamrutiTrust() {
                     </Typography>
                     {/* "para25": "ભીમરાડ યુવા ટ્રસ્ટ દ્વારા ભીમરાડમાં વિવિધ કાર્યક્રમોમાં તેમની હાજરી અને ભાષણો દ્વારા શ્રી નીલમબેન પરીખ, શ્રી કનુ ગાંધી અને શ્રી શિવા ગાંધીને માન્યતા માટેના આ સંઘર્ષથી વાકેફ કરવામાં આવ્યા હતા અને જેમણે જનજાગૃતિ વધારવામાં ખૂબ જ મહત્વપૂર્ણ ભૂમિકા ભજવી હતી.", */}
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -218,7 +219,7 @@ export default function SatyagrahSamrutiTrust() {
                       {t("para26")}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -228,7 +229,7 @@ export default function SatyagrahSamrutiTrust() {
                       {t("para27")}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -238,7 +239,7 @@ export default function SatyagrahSamrutiTrust() {
                       {t("para28")}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -326,6 +327,7 @@ export default function SatyagrahSamrutiTrust() {
                 sx={{
                   position: isMobileOnly ? 'fixed' : 'absolute',
                   bottom: isMobileOnly ? 0 : 8,
+                  left: isMobileOnly ? 0 : "auto",
                   width: '100%',
                   background: '#ffffff'
                 }}

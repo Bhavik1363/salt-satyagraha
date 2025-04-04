@@ -31,10 +31,11 @@ export default function SocialMedia() {
           alignItems={'center'}
         >
           <Typography
-            variant='h4'
+            variant={isMobileOnly ? 'h6' : 'h4'}
             sx={{
               fontFamily: "var(--main-font-family)",
-              textAlign: 'left'
+              textAlign: 'left',
+              fontWeight: 600,
             }}
           >
             {t("Satyagrah_Smruti_Trust")}

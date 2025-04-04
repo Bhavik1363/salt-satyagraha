@@ -207,10 +207,11 @@ export default function Contactus() {
           alignItems={'center'}
         >
           <Typography
-            variant='h4'
+            variant={isMobileOnly ? 'h6' : 'h4'}
             sx={{
               fontFamily: "var(--main-font-family)",
-              textAlign: 'left'
+              textAlign: 'left',
+              fontWeight: 600
             }}
           >
             {t('Contact_US')}
@@ -372,7 +373,7 @@ export default function Contactus() {
                   <img id="map-placeholder"
                     src={sst_location}
                     alt="Google Map Placeholder"
-                    style={{ width: "100%", height: "100%", objectFit: 'contain', position: "absolute", top: 0, left: 0, zIndex: 1,  }} />
+                    style={{ width: "100%", height: "100%", objectFit: 'contain', position: "absolute", top: 0, left: 0, zIndex: 1, }} />
 
                   <iframe
                     id="google-map"

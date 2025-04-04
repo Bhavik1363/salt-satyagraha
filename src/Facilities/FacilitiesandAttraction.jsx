@@ -35,10 +35,11 @@ export default function FacilitiesandAttraction() {
           alignItems={'center'}
         >
           <Typography
-            variant='h4'
+            variant={isMobileOnly ? 'h6' : 'h4'}
             sx={{
               fontFamily: "var(--main-font-family)",
-              textAlign: 'left'
+              textAlign: 'left',
+              fontWeight: 600,
             }}
           >
             {t("Facilities_and_attraction")}
@@ -79,7 +80,7 @@ export default function FacilitiesandAttraction() {
                     }}
                   >
                     <Typography
-                      variant='h4'
+                      variant={isMobileOnly ? 'h6' : 'h4'}
                       sx={{
                         // scrollSnapAlign: 'start',
                         fontWeight: 600,
@@ -90,7 +91,7 @@ export default function FacilitiesandAttraction() {
                       {''}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -100,7 +101,7 @@ export default function FacilitiesandAttraction() {
                       {t("para1")}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -110,7 +111,7 @@ export default function FacilitiesandAttraction() {
                       {t("para2")}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -120,7 +121,7 @@ export default function FacilitiesandAttraction() {
                       {t("para3")}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -150,7 +151,7 @@ export default function FacilitiesandAttraction() {
                     }}
                   >
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -160,7 +161,7 @@ export default function FacilitiesandAttraction() {
                       {t("para5")}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -170,7 +171,7 @@ export default function FacilitiesandAttraction() {
                       {t("para6")}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -181,7 +182,7 @@ export default function FacilitiesandAttraction() {
                     </Typography>
 
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -232,7 +233,7 @@ export default function FacilitiesandAttraction() {
                     }}
                   >
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -242,7 +243,7 @@ export default function FacilitiesandAttraction() {
                       {t("para9")}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -252,7 +253,7 @@ export default function FacilitiesandAttraction() {
                       {t('para10')}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -283,7 +284,7 @@ export default function FacilitiesandAttraction() {
                     }}
                   >
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -293,7 +294,7 @@ export default function FacilitiesandAttraction() {
                       {t("para12")}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -303,7 +304,7 @@ export default function FacilitiesandAttraction() {
                       {t("para13")}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -313,7 +314,7 @@ export default function FacilitiesandAttraction() {
                       {t("para14")}
                     </Typography>
                     <Typography
-                      variant='h6'
+                      variant={isMobileOnly ? 'body1' : 'h6'}
                       sx={{
                         fontFamily: "var(--main-font-family)",
                         textAlign: 'left',
@@ -340,6 +341,7 @@ export default function FacilitiesandAttraction() {
                 sx={{
                   position: isMobileOnly ? 'fixed' : 'absolute',
                   bottom: isMobileOnly ? 0 : 8,
+                  left: isMobileOnly ? 0 : "auto",
                   width: '100%',
                   background: '#ffffff'
                 }}

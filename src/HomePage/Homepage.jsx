@@ -22,7 +22,6 @@ import { Language } from '@mui/icons-material'
 // import { I18n } from 'i18n-js'
 
 export default function Homepage() {
-  const { changeLocale } = useContext(LocaleContext)
 
   const [defaultRotarSetting, setDefaultRotarSetting] = useState({
     angle: 0
@@ -64,7 +63,6 @@ export default function Homepage() {
   }
 
   const handleLanguageChange = (code) => {
-    changeLocale(code);
     setLang(code);
     localStorage.setItem("lang", code); // Store language preference
     setAnchorEl(null);
@@ -130,108 +128,6 @@ export default function Homepage() {
           ))}
         </Menu>
       </Box>
-
-
-      {/* <Box
-        sx={{
-          position: "absolute",
-          right: 150,
-          top: 20,
-        }}
-      >
-      
-
-        <Select
-          labelId='lang'
-          id='lang'
-          // fullWidth
-          defaultValue='-1'
-          value={lang}
-          onChange={e => {
-            changeLocale(e.target.value)
-            setLang(e.target.value);
-            localStorage.setItem("lang", e.target.value)
-          }}
-          IconComponent={ExpandMore}
-        >
-          <MenuItem key='-1' value='-1' disabled>
-            <strong
-              style={{ color: '#303030' }}
-            >
-              <em>{t('select_lang')}</em>
-            </strong>
-          </MenuItem>
-          <MenuItem
-            value={'en'}
-            sx={{
-              fontWeight: 500,
-              color: '#303030',
-              textOverflow: 'ellipsis',
-              width: '100%',
-              overflow: 'hidden'
-            }}
-          >
-            <Typography
-              variant='body1'
-              sx={{
-                fontWeight: 500,
-                color: '#303030',
-                textOverflow: 'ellipsis',
-                width: '100%',
-                overflow: 'hidden'
-              }}
-            >
-              {t('english')}
-            </Typography>
-          </MenuItem>
-          <MenuItem
-            value={'gu'}
-            sx={{
-              fontWeight: 500,
-              color: '#303030',
-              textOverflow: 'ellipsis',
-              width: '100%',
-              overflow: 'hidden'
-            }}
-          >
-            <Typography
-              variant='body1'
-              sx={{
-                fontWeight: 500,
-                color: '#303030',
-                textOverflow: 'ellipsis',
-                width: '100%',
-                overflow: 'hidden'
-              }}
-            >
-              {t('gujarati')}
-            </Typography>
-          </MenuItem>
-          <MenuItem
-            value={'hn'}
-            sx={{
-              fontWeight: 500,
-              color: '#303030',
-              textOverflow: 'ellipsis',
-              width: '100%',
-              overflow: 'hidden'
-            }}
-          >
-            <Typography
-              variant='body1'
-              sx={{
-                fontWeight: 500,
-                color: '#303030',
-                textOverflow: 'ellipsis',
-                width: '100%',
-                overflow: 'hidden'
-              }}
-            >
-              {t('hindi')}
-            </Typography>
-          </MenuItem>
-        </Select>
-      </Box> */}
 
       {(isMobileOnly) ? (
         <div className='circle-container'>

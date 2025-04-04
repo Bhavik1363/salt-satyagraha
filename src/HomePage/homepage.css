@@ -233,6 +233,11 @@
 }
 
 @media screen and (max-width: 768px) {
+    .mainlogo {
+        width: 100px;
+        height: 100px;
+    }
+
     .circle-menu {
         width: 20em;
         height: 20em;

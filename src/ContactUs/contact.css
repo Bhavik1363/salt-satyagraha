@@ -17,6 +17,18 @@
     align-items: center;
 }
 
-.slick-track, .slick-list, .slick-slider, .slider-container {
+.slick-track,
+.slick-list,
+.slick-slider,
+.slider-container {
     height: 100%;
+}
+
+@media screen and (min-width: 340px) and (max-width: 768px) {
+
+    .slick-slide img {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+    }
 }

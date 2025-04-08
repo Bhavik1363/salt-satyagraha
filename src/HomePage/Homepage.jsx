@@ -22,6 +22,7 @@ import { Language } from '@mui/icons-material'
 // import { I18n } from 'i18n-js'
 
 export default function Homepage() {
+  const { changeLocale } = useContext(LocaleContext)
 
   const [defaultRotarSetting, setDefaultRotarSetting] = useState({
     angle: 0
@@ -63,6 +64,7 @@ export default function Homepage() {
   }
 
   const handleLanguageChange = (code) => {
+    changeLocale(code);
     setLang(code);
     localStorage.setItem("lang", code); // Store language preference
     setAnchorEl(null);

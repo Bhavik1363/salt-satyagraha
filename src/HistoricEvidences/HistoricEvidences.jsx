@@ -47,6 +47,7 @@ const settings = {
   className: 'center',
   centerMode: true,
   autoplay: true,
+  pauseOnHover: true,
   speed: 3000,
   autoplaySpeed: 3000,
   cssEase: 'linear'

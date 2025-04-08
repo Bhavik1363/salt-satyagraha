@@ -58,12 +58,12 @@ export default function SocialMedia() {
         >
           <ul className='social-container'>
             <li>
-              <img src={fbQRImg} alt='' style={isMobileOnly && {width: "150px"}} />
-              <span style={{cursor: 'pointer'}} onClick={() => window.open('https://www.facebook.com/profile.php?id=61559225883216', 'blank')}>Facebook</span>
+              <img src={fbQRImg} alt='' style={isMobileOnly ? { width: "150px" } : {}} />
+              <span style={{ cursor: 'pointer' }} onClick={() => window.open('https://www.facebook.com/profile.php?id=61559225883216', 'blank')}>Facebook</span>
             </li>
             <li>
-              <img src={xQRImg} alt='' style={isMobileOnly && {width: "150px"}} />
-              <span style={{cursor: 'pointer'}} onClick={() => window.open('https://x.com/sstbhimrad', 'blank')}>X (Twitter)</span>
+              <img src={xQRImg} alt='' style={isMobileOnly ? { width: "150px" } : {}} />
+              <span style={{ cursor: 'pointer' }} onClick={() => window.open('https://x.com/sstbhimrad', 'blank')}>X (Twitter)</span>
             </li>
           </ul>
         </Grid>

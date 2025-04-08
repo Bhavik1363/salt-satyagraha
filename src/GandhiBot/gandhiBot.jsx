@@ -136,7 +136,7 @@ export default function GandhiBot() {
           bgsound.current.loop = false
           bgsound.current.volume = 1
           setSpeaking(true)
-          toggleListen()
+          setListening(true)
         })
         .catch(err => {
           console.error('getting error while fetching response', err)
@@ -213,6 +213,11 @@ export default function GandhiBot() {
                     recognition.stop()
                     recognition.onend = () => {
                       document.getElementById('micButton').checked = false
+                      document.getElementById('final').value = ''
+                    }
+                    if (bgsound.current) {
+                      bgsound.current.pause(); // Pause the currently playing audio
+                      bgsound.current.currentTime = 0; // Reset to start
                       document.getElementById('final').value = ''
                     }
                   }}
@@ -295,6 +300,22 @@ export default function GandhiBot() {
                   onClick={() => {
                     document.getElementById('final').value =
                       'What are your thought on Sarvdharma Samabhav?'
+                    fetchResponse()
+                  }}
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  primary='What is the power of Lokmat according to Gandhiji?'
+                  disableTypography
+                  sx={{
+                    cursor: 'pointer',
+                    fontFamily: "var(--main-font-family)",
+                    fontWeight: 600
+                  }}
+                  onClick={() => {
+                    document.getElementById('final').value =
+                      'What is the power of Lokmat according to Gandhiji?'
                     fetchResponse()
                   }}
                 />

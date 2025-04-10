@@ -7,7 +7,10 @@ import { LinkButton, StyledTab, StyledTabs } from '../StyledMaterialComponents'
 import { isMobile, isMobileOnly } from 'react-device-detect'
 
 import GandhiBapuImg from '../images/Gandhi3.png'
-import trusteeImg from '../images/trustee.png'
+import trusteeImg from '../images/SST-trusties/trustee.png';
+import hardikDesai from '../images/SST-trusties/HardikDesai.jpg';
+import parimalDesai from '../images/SST-trusties/parimalDesai.jpeg';
+import balwantPatel from '../images/SST-trusties/balwantPatel.jpg';
 import spoonImg from '../images/Spoon.png'
 import './trust.css'
 import { t } from 'i18n-js'
@@ -276,31 +279,31 @@ export default function SatyagrahSamrutiTrust() {
                     <div class='rail-container'>
                       <ul class='rail'>
                         <li>
-                          <img src={trusteeImg} alt='' />
+                          <img src={balwantPatel} alt='' />
                           <span>
-                            Shri Balwantbhai L. Patel - <br /> President
+                            Shri Balwantbhai L. Patel <br /> President
+                          </span>
+                        </li>
+                        <li>
+                          <img src={parimalDesai} alt='' />
+                          <span>
+                            Shri Parimalbhai G. Desai <br /> Vice-President
                           </span>
                         </li>
                         <li>
                           <img src={trusteeImg} alt='' />
                           <span>
-                            Shri Parimalbhai G. Desai - <br /> Vice-President
+                            Shri Yogeshbhai Patel <br /> Secretary
                           </span>
                         </li>
                         <li>
                           <img src={trusteeImg} alt='' />
                           <span>
-                            Shri Yogeshbhai Patel - <br /> Secretary
+                            Shri Karanbhai B. Patel <br />
                           </span>
                         </li>
                         <li>
-                          <img src={trusteeImg} alt='' />
-                          <span>
-                            Shri Karanbhai B. Patel - <br />
-                          </span>
-                        </li>
-                        <li>
-                          <img src={trusteeImg} alt='' />
+                          <img src={hardikDesai} alt='' />
                           <span>
                             Shri Hardikbhai P. Desai <br />
                           </span>

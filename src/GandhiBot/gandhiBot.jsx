@@ -11,7 +11,9 @@ import {
   InputLabel,
   InputAdornment,
   Input,
-  IconButton
+  IconButton,
+  useTheme,
+  useMediaQuery
 } from '@mui/material'
 import React, { useEffect, useRef, useState } from 'react'
 import { LinkButton } from '../StyledMaterialComponents'
@@ -33,6 +35,9 @@ recognition.continous = true
 recognition.lang = 'en-IN'
 
 export default function GandhiBot() {
+  const theme = useTheme()
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'))
+
   const [listening, setListening] = useState(false)
   const [speaking, setSpeaking] = useState(false)
 
@@ -149,7 +154,14 @@ export default function GandhiBot() {
       <Grid
         container
         spacing={2}
-        sx={{ width: '100%', margin: 0, paddingRight: 2 }}
+        sx={{
+          width: '100%',
+          margin: 0,
+          paddingRight: 2,
+          flexDirection: isSmallScreen ? 'column' : 'row',
+          overflowY: isSmallScreen ? 'auto' : 'unset', // Add scroll-y for small screens
+          // maxHeight: isSmallScreen ? '100vh' : 'unset' // Limit height for small screens
+        }}
       >
         <Grid
           item
@@ -161,7 +173,7 @@ export default function GandhiBot() {
           alignItems={'center'}
         >
           <Typography
-            variant='h4'
+            variant={isSmallScreen ? 'h5' : 'h4'}
             sx={{
               fontFamily: "var(--main-font-family)",
               textAlign: 'left'
@@ -175,28 +187,51 @@ export default function GandhiBot() {
           </LinkButton>
         </Grid>
 
-        <Grid item xs={12} md={6} lg={6} sx={{ height: '75vh' }}>
-          <img src={GandhiBapuImg} alt='' className='sideimg' />
+        <Grid
+          item
+          xs={12}
+          md={6}
+          lg={6}
+          sx={{
+            height: isSmallScreen ? '50vh' : '75vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <img
+            src={GandhiBapuImg}
+            alt=''
+            className='sideimg'
+            style={{ width: isSmallScreen ? '80%' : '100%' }}
+          />
         </Grid>
 
         <Grid
           item
-          xs={6}
+          xs={12}
           md={6}
           lg={6}
           sx={{
-            height: '75vh',
+            height: isSmallScreen ? 'auto' : '75vh',
+            overflowY: 'auto',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-evenly',
-            alignItems: 'center'
+            alignItems: 'center',
+            padding: isSmallScreen ? 2 : 0
           }}
         >
           <div onClick={() => toggleListen()}>
             <input type='checkbox' id='micButton' className='mic-checkbox' />
             {!listening ? (
               <label htmlFor='micButton' className='mic-button'>
-                <MicNoneOutlined sx={{ fontSize: 40, color: '#922731' }} />
+                <MicNoneOutlined
+                  sx={{
+                    fontSize: isSmallScreen ? 30 : 40,
+                    color: '#922731'
+                  }}
+                />
                 <span>Tap to Speak</span>
               </label>
             ) : !speaking ? (
@@ -216,12 +251,16 @@ export default function GandhiBot() {
                       document.getElementById('final').value = ''
                     }
                     if (bgsound.current) {
-                      bgsound.current.pause(); // Pause the currently playing audio
-                      bgsound.current.currentTime = 0; // Reset to start
+                      bgsound.current.pause()
+                      bgsound.current.currentTime = 0
                       document.getElementById('final').value = ''
                     }
                   }}
-                  sx={{ background: '#922731', color: '#fff' }}
+                  sx={{
+                    background: '#922731',
+                    color: '#fff',
+                    fontSize: isSmallScreen ? 20 : 40
+                  }}
                 >
                   <Stop />
                 </IconButton>
@@ -238,7 +277,13 @@ export default function GandhiBot() {
               flexDirection: 'column'
             }}
           >
-            <FormControl sx={{ m: 1, width: '60%' }} variant='standard'>
+            <FormControl
+              sx={{
+                m: 1,
+                width: isSmallScreen ? '90%' : '60%'
+              }}
+              variant='standard'
+            >
               <InputLabel shrink htmlFor='final'>
                 Enter here
               </InputLabel>
@@ -255,7 +300,7 @@ export default function GandhiBot() {
               />
             </FormControl>
 
-            <List sx={{ width: '60%' }}>
+            <List sx={{ width: isSmallScreen ? '90%' : '60%' }}>
               <ListItem>
                 <ListItemText
                   primary='Apke sapno ka bharat kaisa hona chahiye?'

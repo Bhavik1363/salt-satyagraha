@@ -2,9 +2,9 @@
     overflow: hidden;
     width: 100%;
     height: 100%;
-  }
-  
-  .rail {
+}
+
+.rail {
     width: 300%;
     list-style: none;
     margin: 0;
@@ -12,40 +12,53 @@
     display: flex;
     height: 100%;
     perspective: 100px;
-  }
-  
-  .rail li {
+}
+
+.rail li {
     width: 33%;
     height: auto;
-    animation: 15s scroll linear infinite;
+    animation: 20s scroll ease-in infinite;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: transform 0.5s linear;
-  }
+}
 
-  .rail li span {
+.rail li img {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 30%;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s linear;
+}
+
+.rail li span {
     font-size: 20px;
     font-family: var(--main-font-family);
     font-weight: 600;
-  }
+}
 
-  .rail li:hover {
+.rail li:hover {
     transform: translateZ(20px);
- }
-  
-  @keyframes scroll {
+}
+
+@keyframes scroll {
     0% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
     100% {
-      transform: translateX(-100%);
+        transform: translateX(-500%);
     }
-  }
+}
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .rail li span {
-      font-size: 17px;
+        font-size: 17px;
     }
-  }
+    .rail li img {
+        width: 30vw;
+        height: 30vw;
+    }
+}
